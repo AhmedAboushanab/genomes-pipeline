@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 source /nfs/production/interpro/metagenomics/mags-scripts/annot-config
 
 export MEMORY=20G
@@ -8,11 +7,11 @@ export NUM_CORES=8
 
 export WORK_DIR=/hps/nobackup2/production/metagenomics/pipeline/testing/kate_work
 export OUT_DIR=/hps/nobackup2/production/metagenomics/pipeline/testing/kate_out
-export PIPELINE_FOLDER=/hps/nobackup2/production/metagenomics/
+export PIPELINE_FOLDER=/hps/nobackup2/production/metagenomics/databases/human-gut_resource/cwl_pipeline/genomes-pipeline
 
 export NAME_RUN=test-genomes
-export CWL=$PIPELINE_FOLDER/...
-export YML=$PIPELINE_FOLDER/...
+export CWL=$PIPELINE_FOLDER/tools/checkm.cwl
+export YML=$PIPELINE_FOLDER/tools/checkm.yml
 
 # < set up folders >
 export JOB_TOIL_FOLDER=$WORK_DIR/$NAME_RUN/
