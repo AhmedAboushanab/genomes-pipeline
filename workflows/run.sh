@@ -18,6 +18,7 @@ export YML=$PIPELINE_FOLDER/tools/checkm.yml
 export JOB_TOIL_FOLDER=$WORK_DIR/$NAME_RUN/
 export LOG_DIR=${OUT_DIR}/logs_${NAME_RUN}
 export TMPDIR=${WORK_DIR}/global-temp-dir_${NAME_RUN}
+export $OUT_TOOL=${OUT_DIR}/{NAME_RUN}
 
 mkdir -p $JOB_TOIL_FOLDER $LOG_DIR $TMPDIR $OUT_TOOL && \
 cd $WORK_DIR && \
