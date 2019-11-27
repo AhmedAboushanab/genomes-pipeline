@@ -1,6 +1,7 @@
 #!/bin/bash
 
 source /nfs/production/interpro/metagenomics/mags-scripts/annot-config
+source /hps/nobackup2/production/metagenomics/pipeline/tools-v5/toil-user-env/bin/activate
 
 export MEMORY=20G
 export NUM_CORES=8
