@@ -1,0 +1,5 @@
+genomes_folder: /hps/nobackup2/production/metagenomics/databases/human-gut_resource/cwl_pipeline/test_genomes/
+
+checkm_res:
+  class: File
+  path: /hps/nobackup2/production/metagenomics/databases/human-gut_resource/cwl_pipeline/output/checkm/checkm.out
