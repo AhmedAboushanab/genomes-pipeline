@@ -33,7 +33,7 @@ steps:
   checkm2csv:
     run: ../tools/checkm/checkm2csv.cwl
     in:
-      out_checkm: checkm_res#checkm/stdout
+      out_checkm: checkm_res #checkm/stdout
     out: [ csv ]
 
   drep:
