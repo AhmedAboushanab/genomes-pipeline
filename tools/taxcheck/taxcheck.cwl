@@ -19,25 +19,32 @@ arguments:
     position: 1
 
 inputs:
-  genomes:
-    type: string
-
-  drep_outfolder:
+  genomes_fasta:
     type: string
     inputBinding:
       position: 2
+      prefix: '-i'
 
-  checkm_csv:
-    type: File
+  taxcheck_outfolder:
+    type: string
     inputBinding:
-      position: 8
-      prefix: '--genomeInfo'
+      position: 3
+      prefix: '-d'
 
-stdout: checkm.out
+  taxcheck_outname:
+    type: string
+    inputBinding:
+      position: 4
+      prefix: '-o'
 
 outputs:
 
-  out_folder:
+  taxcheck_folder:
     type: Directory
     outputBinding:
-      glob: $(inputs.drep_outfolder)
+      glob: $(inputs.taxcheck_outfolder)
+
+  taxcheck_ouput:
+    type: File
+    outputBinding:
+      glob: $(inputs.taxcheck_outname)
