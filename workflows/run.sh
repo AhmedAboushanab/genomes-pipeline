@@ -12,8 +12,8 @@ export OUT_DIR=/hps/nobackup2/production/metagenomics/pipeline/testing/kate_out
 export PIPELINE_FOLDER=/hps/nobackup2/production/metagenomics/databases/human-gut_resource/cwl_pipeline/genomes-pipeline
 
 export NAME_RUN=test-genomes
-export CWL=$PIPELINE_FOLDER/tools/checkm/checkm2csv.cwl
-export YML=$PIPELINE_FOLDER/tools/test.yml
+export CWL=$PIPELINE_FOLDER/workflows/wf.cwl
+export YML=$PIPELINE_FOLDER/workflows/wf.yml
 
 # < set up folders >
 export JOB_TOIL_FOLDER=$WORK_DIR/$NAME_RUN/
