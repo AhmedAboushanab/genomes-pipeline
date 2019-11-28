@@ -62,3 +62,7 @@ outputs:
     type: Directory
     outputBinding:
       glob: $(inputs.drep_outfolder)
+  dereplicated_genomes:
+    type: Directory
+    outputBinding:
+      glob: $(inputs.drep_outfolder)/dereplicated_genomes
