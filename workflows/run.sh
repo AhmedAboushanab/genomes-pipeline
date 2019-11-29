@@ -1,7 +1,7 @@
 #!/bin/bash
 
 source /nfs/production/interpro/metagenomics/mags-scripts/annot-config
-source /hps/nobackup2/production/metagenomics/pipeline/tools-v5/toil-user-env/bin/activate
+source /hps/nobackup2/production/metagenomics/pipeline/testing/kate/toil-3.19.0/bin/activate
 export PATH=$PATH:/homes/emgpr/.nvm/versions/node/v12.10.0/bin/
 
 export MEMORY=20G

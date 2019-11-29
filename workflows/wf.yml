@@ -2,4 +2,4 @@ genomes_folder: /hps/nobackup2/production/metagenomics/databases/human-gut_resou
 
 checkm_res:
   class: File
-  path: /hps/nobackup2/production/metagenomics/databases/human-gut_resource/cwl_pipeline/alex_test/checkm.log
+  path: /hps/nobackup2/production/metagenomics/databases/human-gut_resource/cwl_pipeline/alex_test/checkm.out
