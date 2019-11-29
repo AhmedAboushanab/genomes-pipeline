@@ -1,1 +1,3 @@
-out_checkm: /hps/nobackup2/production/metagenomics/databases/human-gut_resource/cwl_pipeline/output/checkm/checkm.out
+genomes:
+  class: Directory
+  path: /Users/kates/Desktop/EBI/CWL/genomes-pipeline/tools/checkm

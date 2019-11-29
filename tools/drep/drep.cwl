@@ -18,7 +18,7 @@ arguments:
     valueFrom: '16'
     position: 1
   - prefix: '-g'
-    valueFrom: $(inputs.genomes)/*.fa
+    valueFrom: $(inputs.genomes)*.fa
     position: 3
   - prefix: '-pa'
     position: 4
