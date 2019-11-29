@@ -1,32 +1,14 @@
-#!/usr/bin/env cwl-runner
-cwlVersion: v1.0
 class: CommandLineTool
-
-label: "checkm"
-
+cwlVersion: v1.0
 requirements:
-  ResourceRequirement:
-    ramMin: 50000
-    coresMin: 16
-  InlineJavascriptRequirement: {}
-  ScatterFeatureRequirement: {}
-
-baseCommand: [ls]
-
+  - class: InlineJavascriptRequirement
+  - class: ShellCommandRequirement
+  - class: InitialWorkDirRequirement
+    listing: |
+      ${return {'type': 'array', 'items': [ inputs.empty ]};}
 
 inputs:
-  genomes:
-    type: Directory
-    inputBinding:
-      position: 1
-
-stdout: list.txt
+  genomes: Directory
 
 outputs:
-  stdout: stdout
-
-  files:
-    type: File[]
-    outputBinding:
-      glob: $(inputs.genomes.listing)
-
+  outlist: stdout
