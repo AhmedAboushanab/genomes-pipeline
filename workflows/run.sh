@@ -12,7 +12,7 @@ export OUT_DIR=/hps/nobackup2/production/metagenomics/pipeline/testing/kate_out
 export PIPELINE_FOLDER=/hps/nobackup2/production/metagenomics/databases/human-gut_resource/cwl_pipeline/genomes-pipeline
 
 export NAME_RUN=test-genomes
-export CWL=$PIPELINE_FOLDER/workflows/wf.cwl
+export CWL=$PIPELINE_FOLDER/workflows/wf-test.cwl
 export YML=$PIPELINE_FOLDER/workflows/wf.yml
 
 # < set up folders >
@@ -28,6 +28,7 @@ time cwltoil \
   --no-container \
   --batchSystem LSF \
   --disableCaching \
+  --logDebug \
   --defaultMemory $MEMORY \
   --jobStore $JOB_TOIL_FOLDER \
   --outdir $OUT_TOOL \

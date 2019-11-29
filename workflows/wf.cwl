@@ -11,9 +11,11 @@ requirements:
 
 inputs:
   genomes_folder: string
-  checkm_res: File
 
 outputs:
+  checkm_outfolder:
+    type: Directory
+    outputSource: checkm/out_folder
   checkm_csv:
     type: File
     outputSource: checkm2csv/csv
@@ -28,17 +30,17 @@ outputs:
     outputSource: gtdbtk/gtdbtk_folder
 
 steps:
-#  checkm:
-#    run: ../tools/checkm/checkm.cwl
-#    in:
-#      input_folder: genomes_folder
-#      checkm_outfolder: { default: 'checkm_outfolder' }
-#    out: [ stdout, out_folder ]
+  checkm:
+    run: ../tools/checkm/checkm.cwl
+    in:
+      input_folder: genomes_folder
+      checkm_outfolder: { default: 'checkm_outfolder' }
+    out: [ stdout, out_folder ]
 
   checkm2csv:
     run: ../tools/checkm/checkm2csv.cwl
     in:
-      out_checkm: checkm_res #checkm/stdout
+      out_checkm: checkm/stdout
     out: [ csv ]
 
   drep:
