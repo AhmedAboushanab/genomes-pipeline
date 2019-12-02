@@ -26,7 +26,7 @@ arguments:
 
 inputs:
   input_folder:
-    type: string
+    type: Directory
     inputBinding:
       position: 3
 
