@@ -54,8 +54,6 @@ inputs:
       position: 8
       prefix: '--genomeInfo'
 
-stdout: checkm.out
-
 outputs:
 
   out_folder:
