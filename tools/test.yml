@@ -1,6 +1,3 @@
-genomes:
-  class: Directory
-  path: /Users/kates/Desktop/EBI/CWL/genomes-pipeline/tools/checkm
 out_checkm:
   class: File
   path: /hps/nobackup2/production/metagenomics/databases/human-gut_resource/cwl_pipeline/alex_test/checkm.out
