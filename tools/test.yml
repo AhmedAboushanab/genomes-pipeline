@@ -1,3 +1,5 @@
-out_checkm:
+genomes: /hps/nobackup2/production/metagenomics/databases/human-gut_resource/cwl_pipeline/test_genomes/
+drep_outfolder: drep_outfolder
+checkm_csv:
   class: File
   path: /hps/nobackup2/production/metagenomics/databases/human-gut_resource/cwl_pipeline/alex_test/checkm.out
