@@ -2,7 +2,7 @@
 cwlVersion: v1.0
 class: CommandLineTool
 
-label: "checkm"
+label: "split drep"
 
 requirements:
   ResourceRequirement:
@@ -11,11 +11,11 @@ requirements:
   InlineJavascriptRequirement: {}
   ScatterFeatureRequirement: {}
 
-baseCommand: ["split_drep.py "]
+baseCommand: ["split_drep.py"]
 
 inputs:
   genomes_folder:
-    type: string
+    type: Directory
     inputBinding:
       position: 1
       prefix: '-f'

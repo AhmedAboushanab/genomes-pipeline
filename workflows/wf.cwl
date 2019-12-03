@@ -10,7 +10,7 @@ requirements:
   ScatterFeatureRequirement: {}
 
 inputs:
-  genomes_folder: string
+  genomes_folder: Directory
 
 outputs:
   checkm_outfolder:
