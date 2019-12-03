@@ -2,7 +2,7 @@
 cwlVersion: v1.0
 class: CommandLineTool
 
-label: "checkm"
+label: "taxcheck"
 
 requirements:
   ResourceRequirement:

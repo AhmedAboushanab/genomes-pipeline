@@ -13,17 +13,17 @@ requirements:
 
 baseCommand: ["split_drep.py"]
 
+arguments:
+  - valueFrom: $(inputs.genomes_folder.basename)
+    prefix: '-f'
+  - valueFrom: $(inputs.drep_folder.basename)
+    prefix: '-d'
+
 inputs:
   genomes_folder:
     type: Directory
-    inputBinding:
-      position: 1
-      prefix: '-f'
   drep_folder:
     type: Directory
-    inputBinding:
-      position: 2
-      prefix: '-d'
   split_outfolder:
     type: string
     inputBinding:
