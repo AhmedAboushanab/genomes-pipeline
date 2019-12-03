@@ -14,9 +14,9 @@ requirements:
 baseCommand: ["split_drep.py"]
 
 arguments:
-  - valueFrom: $(inputs.genomes_folder.basename)
+  - valueFrom: $(inputs.genomes_folder.location.split('file://')[1])
     prefix: '-f'
-  - valueFrom: $(inputs.drep_folder.basename)
+  - valueFrom: $(inputs.drep_folder.location.split('file://')[1])
     prefix: '-d'
 
 inputs:
