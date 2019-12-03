@@ -30,6 +30,9 @@ outputs:
     outputSource: gtdbtk/gtdbtk_folder
 
 steps:
+
+  # add taxcheck
+
   checkm:
     run: ../tools/checkm/checkm.cwl
     in:
@@ -66,3 +69,23 @@ steps:
       gtdb_outfolder: { default: 'gtdb_outfolder' }
     out: [ gtdbtk_folder ]
 
+  classify_clusters:
+    run: ../tools/drep/classify_folders.cwl
+    in:
+      clusters: split_drep/split_out
+    out: [many_genomes, one_genome]
+
+  process_mash:
+    run: ../tools
+
+  process_many_genomes:
+    run: sub-wf/sub-wf-many-genomes.cwl
+    in:
+
+    out:
+
+  process_one_genome:
+    run: sub-wf/sub-wf-one-gemone.cwl
+    in:
+
+    out:

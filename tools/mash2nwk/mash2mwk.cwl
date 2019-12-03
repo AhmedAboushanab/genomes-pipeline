@@ -15,9 +15,18 @@ baseCommand: ["mash2nwk.R"]
 
 inputs:
   input_mash:
-    type: string
+    type: File
     inputBinding:
       position: 1
       prefix: '-m'
 
-outputs: []
+outputs:
+  mash_tree:
+    type: File
+    outputBinding:
+      glob: *.nwk
+      outputEval: |
+        ${
+          self[0].basename = inputs.input_mash.nameroot + 'tree.nwk';
+          return self[0]
+        }
