@@ -15,7 +15,7 @@ inputs:
 outputs:
   output_file:
     type: File[]
-    outputSource: taxcheck/taxcheck_ouput
+    outputSource: taxcheck/taxcheck_output
 
 steps:
   taxcheck:
