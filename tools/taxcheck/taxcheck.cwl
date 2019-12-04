@@ -17,8 +17,6 @@ arguments:
   - prefix: -t
     valueFrom: '4'
     position: 1
-
-arguments:
   - valueFrom: $(inputs.genomes_fasta.nameroot)_$(inputs.taxcheck_outfolder)
     position: 3
     prefix: '-d'
