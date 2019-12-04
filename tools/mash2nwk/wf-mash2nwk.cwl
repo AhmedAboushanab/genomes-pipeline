@@ -14,7 +14,7 @@ inputs:
 
 outputs:
   tree:
-    class: File
+    type: File
     outputSource: mash2tree/mash_tree
 
 steps:
