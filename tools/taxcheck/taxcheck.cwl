@@ -20,7 +20,7 @@ arguments:
 
 inputs:
   genomes_fasta:
-    type: string
+    type: File
     inputBinding:
       position: 2
       prefix: '-i'
