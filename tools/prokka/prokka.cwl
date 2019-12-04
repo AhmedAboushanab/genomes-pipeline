@@ -12,7 +12,7 @@ requirements:
 baseCommand: [prokka]
 
 arguments:
-  - valueFrom: 16
+  - valueFrom: '16'
     prefix: '--cpus'
     position: 2
   - valueFrom: 'Bacteria'

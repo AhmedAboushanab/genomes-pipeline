@@ -14,13 +14,13 @@ baseCommand: [roary]
 arguments:
   - valueFrom: $(inputs.gffs.listing)
     position: 1
-  - valueFrom: 16
+  - valueFrom: '16'
     position: 2
     prefix: '-p'
-  - valueFrom: 90
+  - valueFrom: '90'
     position: 3
     prefix: '-i'
-  - valueFrom: 90
+  - valueFrom: '90'
     position: 4
     prefix: '-cd'
   - valueFrom: $(inputs.roary_outfolder)
