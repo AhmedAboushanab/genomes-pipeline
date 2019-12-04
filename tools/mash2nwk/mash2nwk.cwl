@@ -25,8 +25,8 @@ outputs:
     type: File
     outputBinding:
       glob: "*.nwk"
-#      outputEval: |
-#        ${
-#          self[0].basename = inputs.input_mash.nameroot + 'tree.nwk';
-#          return self[0]
-#        }
+      outputEval: |
+        ${
+          self[0].basename = inputs.input_mash.nameroot + 'tree.nwk';
+          return self[0]
+        }

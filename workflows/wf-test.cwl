@@ -10,30 +10,30 @@ requirements:
   ScatterFeatureRequirement: {}
 
 inputs:
-  genomes_folder: string
-  checkm_res: File
+  split: Directory
 
 outputs:
-  checkm_csv:
-    type: File
-    outputSource: checkm2csv/csv
-  drep:
+  mashes:
     type: Directory
-    outputSource: drep/out_folder
+    outputSource: return_mash_dir/out
 
 steps:
-#  checkm:
-
-  checkm2csv:
-    run: ../tools/checkm/checkm2csv.cwl
+  classify_clusters:
+    run: ../tools/drep/classify_folders.cwl
     in:
-      out_checkm: checkm_res
-    out: [ csv ]
+      clusters: split
+    out: [many_genomes, one_genome, mash_folder]
 
-  drep:
-    run: ../tools/drep/drep.cwl
+  process_mash:
+    scatter: input_mash
+    run: ../tools/mash2nwk/mash2nwk.cwl
     in:
-      genomes: genomes_folder
-      drep_outfolder: { default: 'drep_outfolder' }
-      checkm_csv: checkm2csv/csv
-    out: [ out_folder, dereplicated_genomes ]
+      input_mash: classify_clusters/mash_folder
+    out: [mash_tree]
+
+  return_mash_dir:
+    run: ../utils/return_directory.cwl
+    in:
+      list: process_mash/mash_tree
+      dir_name: { default: 'mash_trees' }
+    out: [out]

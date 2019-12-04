@@ -73,10 +73,21 @@ steps:
     run: ../tools/drep/classify_folders.cwl
     in:
       clusters: split_drep/split_out
-    out: [many_genomes, one_genome]
+    out: [many_genomes, one_genome, mash_folder]
 
   process_mash:
-    run: ../tools
+    scatter: input_mash
+    run: ../tools/mash2nwk/mash2nwk.cwl
+    in:
+      input_mash: classify_clusters/mash_folder
+    out: [mash_tree]
+
+  return_mash_dir:
+    run: ../utils/return_directory.cwl
+    in:
+      list: process_mash/mash_tree
+      dir_name: { default: 'mash_trees' }
+    out: [out]
 
   process_many_genomes:
     run: sub-wf/sub-wf-many-genomes.cwl
