@@ -18,13 +18,24 @@ outputs:
     outputSource: taxcheck/taxcheck_output
 
 steps:
+  prep_step:
+    run:
+      class: ExpressionTool
+      requirements: { InlineJavascriptRequirement: {} }
+      inputs:
+        dir: Directory
+      expression: '${return {"files": inputs.dir.listing};}'
+      outputs:
+        files: File[]
+    in:
+      dir: split
+    out: [files]
+
   taxcheck:
     run: ../tools/taxcheck/taxcheck.cwl
     scatter: genomes_fasta
     in:
-      genomes_fasta:
-        source: split
-        valueFrom: $(self.listing)
+      genomes_fasta: prep_step/files
       taxcheck_outfolder: { default: 'outdir'}
       taxcheck_outname: { default: 'outname'}
     out: [taxcheck_folder, taxcheck_output]
