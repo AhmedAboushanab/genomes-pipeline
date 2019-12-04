@@ -44,7 +44,7 @@ outputs:
     outputBinding:
       glob: $(inputs.taxcheck_outfolder)
 
-  taxcheck_ouput:
+  taxcheck_output:
     type: File
     outputBinding:
       glob: $(inputs.taxcheck_outname)

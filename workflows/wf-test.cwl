@@ -13,9 +13,9 @@ inputs:
   split: Directory
 
 outputs:
-  mashes:
-    type: Directory
-    outputSource: return_mash_dir/out
+  output_file:
+    type: File[]
+    outputSource: taxcheck/taxcheck_ouput
 
 steps:
   taxcheck:
@@ -27,4 +27,4 @@ steps:
         valueFrom: $(self.listing)
       taxcheck_outfolder: { default: 'outdir'}
       taxcheck_outname: { default: 'outname'}
-    out: [taxcheck_folder, taxcheck_ouput]
+    out: [taxcheck_folder, taxcheck_output]
