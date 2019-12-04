@@ -9,22 +9,40 @@ requirements:
   InlineJavascriptRequirement: {}
   ScatterFeatureRequirement: {}
 
-baseCommand: [classify_folders.py]
+baseCommand: [prokka]
 
 arguments:
-  - valueFrom: $(inputs.clusters.location.split('file://')[1])
-    prefix: '-i'
+  - valueFrom: 16
+    prefix: '--cpus'
+    position: 2
+  - valueFrom: 'Bacteria'
+    prefix: '--kingdom'
+    position: 3
+  - valueFrom: $(inputs.outdirname)
+    prefix: '--outdir'
+    position: 4
+  - valueFrom: $(inputs.fa_file.nameroot)
+    prefix: '--prefix'
+    position: 5
+  - valueFrom: '--force'
+    position: 6
+  - valueFrom: $(inputs.fa_file.nameroot)
+    prefix: '--locustag'
+    position: 7
 
 inputs:
-  clusters:
-    type: Directory
+  fa_file:
+    type: File
+    inputBinding:
+      position: 1
+  outdirname: string
 
 outputs:
-  many_genomes:
-    type: Directory[]
+  gff:
+    type: File
     outputBinding:
-      glob: "many_genomes/*"
-  one_genome:
-    type: Directory[]
+      glob: $(inputs.outdirname)/$(inputs.fa_file.nameroot).gff
+  faa:
+    type: File
     outputBinding:
-      glob: "one_genome/*"
+      glob: $(inputs.outdirname)/$(inputs.fa_file.nameroot).faa

@@ -1,0 +1,43 @@
+#!/usr/bin/env cwl-runner
+cwlVersion: v1.0
+class: CommandLineTool
+
+requirements:
+  ResourceRequirement:
+    ramMin: 10000
+    coresMin: 16
+  InlineJavascriptRequirement: {}
+  ScatterFeatureRequirement: {}
+
+baseCommand: [roary]
+
+arguments:
+  - valueFrom: $(inputs.gffs.listing)
+    position: 1
+  - valueFrom: 16
+    position: 2
+    prefix: '-p'
+  - valueFrom: 90
+    position: 3
+    prefix: '-i'
+  - valueFrom: 90
+    position: 4
+    prefix: '-cd'
+  - valueFrom: $(inputs.roary_outfolder)
+    position: 5
+    prefix: '-f'
+  - valueFrom: '-v'
+    position: 6
+  - valueFrom: '-s'
+    position: 7
+  - valueFrom: '-e'
+    position: 8
+  - valueFrom: '-n'
+    position: 9
+
+inputs:
+  gffs:
+    type: File[]
+  roary_outfolder: string
+
+outputs:
