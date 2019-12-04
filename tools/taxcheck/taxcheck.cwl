@@ -23,7 +23,7 @@ inputs:
     type: File
     inputBinding:
       position: 2
-      prefix: '-i'
+      prefix: '-c'
 
   taxcheck_outfolder:
     type: string
