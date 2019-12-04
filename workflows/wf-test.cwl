@@ -16,7 +16,9 @@ outputs:
   output_file:
     type: File[]
     outputSource: taxcheck/taxcheck_output
-
+  output_folder:
+    type: Directory[]
+    outputSource: taxcheck/taxcheck_folder
 steps:
   prep_step:
     run:
