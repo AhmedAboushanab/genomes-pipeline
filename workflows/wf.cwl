@@ -46,8 +46,8 @@ steps:
     scatter: genomes_fasta
     in:
       genomes_fasta: prep_taxcheck/files
-      taxcheck_outfolder: { default: 'outdir'}
-      taxcheck_outname: { default: 'outname'}
+      taxcheck_outfolder: { default: 'taxcheck_outdir'}
+      taxcheck_outname: { default: 'taxcheck_outname'}
     out: [taxcheck_folder, taxcheck_output]
 
   checkm:
