@@ -13,6 +13,10 @@ inputs:
   genomes_folder: Directory
 
 outputs:
+  mash_trees:
+    type: Directory
+    outputSource: return_mash_dir/out
+
   checkm_outfolder:
     type: Directory
     outputSource: checkm/out_folder

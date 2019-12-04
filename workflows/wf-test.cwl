@@ -18,22 +18,13 @@ outputs:
     outputSource: return_mash_dir/out
 
 steps:
-  classify_clusters:
-    run: ../tools/drep/classify_folders.cwl
+  taxcheck:
+    run: ../tools/taxcheck/taxcheck.cwl
+    scatter: genomes_fasta
     in:
-      clusters: split
-    out: [many_genomes, one_genome, mash_folder]
-
-  process_mash:
-    scatter: input_mash
-    run: ../tools/mash2nwk/mash2nwk.cwl
-    in:
-      input_mash: classify_clusters/mash_folder
-    out: [mash_tree]
-
-  return_mash_dir:
-    run: ../utils/return_directory.cwl
-    in:
-      list: process_mash/mash_tree
-      dir_name: { default: 'mash_trees' }
-    out: [out]
+      genomes_fasta:
+        source: split
+        valueFrom: $(self.listing)
+      taxcheck_outfolder: { default: 'outdir'}
+      taxcheck_outname: { default: 'outname'}
+    out: [taxcheck_folder, taxcheck_ouput]
