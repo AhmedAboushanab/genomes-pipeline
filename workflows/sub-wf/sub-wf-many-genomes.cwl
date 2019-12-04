@@ -13,9 +13,18 @@ inputs:
   cluster: Directory
 
 outputs:
-  gffs:
+  prokka_gffs:
     type: File[]
     outputSource: prokka/gff
+  prokka_faa-s:
+    type: File[]
+    outputSource: prokka/faa
+  roary-faa:
+    type: File
+    outputSource: roary/pan_genome_reference-faa
+  roary-fa:
+    type: File
+    outputSource: roary/pan_genome_reference-fa
 
 steps:
   preparation:
@@ -32,4 +41,11 @@ steps:
       outdirname: { default: 'prokka'}
     out: [gff, faa]
 
-#  roary:
+  roary:
+    run: ../../tools/roary/roary.cwl
+    in:
+      gffs: prokka/gff
+      roary_outfolder: {default: 'roary_outfolder' }
+    out:
+      - pan_genome_reference-fa
+      - pan_genome_reference-faa

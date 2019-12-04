@@ -41,3 +41,12 @@ inputs:
   roary_outfolder: string
 
 outputs:
+  pan_genome_reference-fa:
+    type: File
+    outputBinding:
+      glob: $(inputs.roary_outfolder)/pan_genome_reference.fa
+
+  pan_genome_reference-faa:
+    type: File
+    outputBinding:
+      glob: $(inputs.roary_outfolder)/pan_genome_reference.faa
