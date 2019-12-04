@@ -18,6 +18,14 @@ arguments:
     valueFrom: '4'
     position: 1
 
+arguments:
+  - valueFrom: $(inputs.genomes_fasta.nameroot)_$(inputs.taxcheck_outfolder)
+    position: 3
+    prefix: '-d'
+  - valueFrom: $(inputs.genomes_fasta.nameroot)_$(inputs.taxcheck_outname)
+    position: 4
+    prefix: '-o'
+
 inputs:
   genomes_fasta:
     type: File
@@ -25,17 +33,8 @@ inputs:
       position: 2
       prefix: '-c'
 
-  taxcheck_outfolder:
-    type: string
-    inputBinding:
-      position: 3
-      prefix: '-d'
-
-  taxcheck_outname:
-    type: string
-    inputBinding:
-      position: 4
-      prefix: '-o'
+  taxcheck_outfolder: string
+  taxcheck_outname: string
 
 outputs:
 

@@ -1,22 +1,7 @@
-class: CommandLineTool
-cwlVersion: v1.0
-requirements:
-  - class: InlineJavascriptRequirement
-  - class: ShellCommandRequirement
-#  - class: InitialWorkDirRequirement
-#    listing: |
-#      ${return {'type': 'array', 'items': [ inputs.genomes.listing ]};}
-
+class: ExpressionTool
+requirements: { InlineJavascriptRequirement: {} }
 inputs:
-  genomes: Directory
-
-stdout: me.txt
-
+  dir: Directory
+expression: '${return {"files": inputs.dir.listing};}'
 outputs:
-  outlist:
-    type: File[]
-    secondaryFiles: $(inputs.genomes.listing)
-
-#arguments: ["find", ".",
-#  {shellQuote: false, valueFrom: "|"},
-#  "sort"]
+  files: File[]

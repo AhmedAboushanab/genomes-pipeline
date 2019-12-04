@@ -21,14 +21,7 @@ outputs:
     outputSource: taxcheck/taxcheck_folder
 steps:
   prep_step:
-    run:
-      class: ExpressionTool
-      requirements: { InlineJavascriptRequirement: {} }
-      inputs:
-        dir: Directory
-      expression: '${return {"files": inputs.dir.listing};}'
-      outputs:
-        files: File[]
+    run: ../utils/get_files_from_dir.cwl
     in:
       dir: split
     out: [files]
