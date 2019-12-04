@@ -32,12 +32,14 @@ if __name__ == "__main__":
             number_of_genomes = sum([1 for i in genomes if len(i.split('.fa')) > 1])
             if number_of_genomes > 1:
                 for genome in genomes:
-                    shutil.copy(os.path.join(drep_clusters, cluster, genome), os.path.join(NAME_MANY_GENOMES, cluster, genome))
+                    shutil.copy(os.path.join(drep_clusters, cluster, genome),
+                                os.path.join(NAME_MANY_GENOMES, cluster, genome))
                 mashes = [i for i in genomes if len(i.split('mash.tsv')) > 1]
                 if len(mashes) > 0:
                     mash = mashes[0]
                     shutil.copy(os.path.join(drep_clusters, cluster, mash), os.path.join(NAME_MASH, mash))
             if number_of_genomes == 1:
-                for
-                shutil.copy(os.path.join(drep_clusters, cluster), os.path.join(NAME_ONE_GENOME, cluster))
+                for genome in genomes:
+                    shutil.copy(os.path.join(drep_clusters, cluster, genome),
+                                os.path.join(NAME_ONE_GENOME, cluster, genome))
 

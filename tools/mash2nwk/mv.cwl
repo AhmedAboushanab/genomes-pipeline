@@ -2,8 +2,6 @@
 cwlVersion: v1.0
 class: CommandLineTool
 
-label: "mash2nwk"
-
 requirements:
   ResourceRequirement:
     ramMin: 10000
@@ -11,22 +9,20 @@ requirements:
   InlineJavascriptRequirement: {}
   ScatterFeatureRequirement: {}
 
-baseCommand: ["mash2nwk.R"]
+baseCommand: [mv]
 
 inputs:
   input_mash:
     type: File
     inputBinding:
       position: 1
-      prefix: '-m'
+
+arguments:
+  - valueFrom: "file.mash"
+    position: 2
 
 outputs:
-  mash_tree:
+  mash:
     type: File
     outputBinding:
-      glob: *.nwk
-      outputEval: |
-        ${
-          self[0].basename = inputs.input_mash.nameroot + 'tree.nwk';
-          return self[0]
-        }
+      glob: "file.mash"
