@@ -19,7 +19,7 @@ arguments:
     position: 1
   - prefix: --genome_dir
     valueFrom: $(inputs.drep_folder.location.split('file://')[1])
-    porition: 2
+    position: 2
   - prefix: -x
     valueFrom: 'fa'
     position: 4
