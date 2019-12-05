@@ -16,6 +16,9 @@ outputs:
   prokka_gffs:
     type: File[]
     outputSource: prokka/gff
+  prokka_faa-s:
+    type: File[]
+    outputSource: prokka/faa
   roary-faa:
     type: File
     outputSource: roary/pan_genome_reference-faa
@@ -36,7 +39,7 @@ steps:
     in:
       fa_file: preparation/files
       outdirname: { default: 'prokka'}
-    out: [ gff ]
+    out: [ gff, faa ]
 
   roary:
     run: ../../tools/roary/roary.cwl
