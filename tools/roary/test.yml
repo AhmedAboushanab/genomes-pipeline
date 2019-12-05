@@ -1,0 +1,13 @@
+gffs:
+  - class: File
+    path: /hps/nobackup2/production/metagenomics/databases/human-gut_resource/cwl_pipeline/output/split_outfolder/1_1_gff/GUT_GENOME000132.gff
+  - class: File
+    path: /hps/nobackup2/production/metagenomics/databases/human-gut_resource/cwl_pipeline/output/split_outfolder/1_1_gff/GUT_GENOME000263.gff
+  - class: File
+    path: /hps/nobackup2/production/metagenomics/databases/human-gut_resource/cwl_pipeline/output/split_outfolder/1_1_gff/GUT_GENOME000301.gff
+  - class: File
+    path: /hps/nobackup2/production/metagenomics/databases/human-gut_resource/cwl_pipeline/output/split_outfolder/1_1_gff/GUT_GENOME000834.gff
+  - class: File
+    path: /hps/nobackup2/production/metagenomics/databases/human-gut_resource/cwl_pipeline/output/split_outfolder/1_1_gff/GUT_GENOME000920.gff
+
+roary_outfolder: roary
