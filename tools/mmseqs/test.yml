@@ -1,0 +1,5 @@
+input_fasta:
+  class: File
+  path:
+limit_i: 100
+limit_c: 80
