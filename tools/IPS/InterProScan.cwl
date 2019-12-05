@@ -7,6 +7,13 @@ id: i5
 baseCommand: []
 
 arguments:
+  - position: 0
+    shellQuote: false
+    valueFrom: cp -r /opt/interproscan $(runtime.outdir)/interproscan;
+  - position: 2
+    shellQuote: false
+    valueFrom: $(runtime.outdir)/interproscan/interproscan.sh
+
   - position: 3
     prefix: '-cpu'
     valueFrom: '16'
@@ -34,6 +41,8 @@ inputs:
     doc: >-
       Optional, path to fasta file that should be loaded on Master startup.
       Alternatively, in CONVERT mode, the InterProScan 5 XML file to convert.
+  - id: outdir
+    type: string
 
 
 outputs:
