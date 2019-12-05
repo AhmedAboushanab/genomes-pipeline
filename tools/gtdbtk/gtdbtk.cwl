@@ -17,16 +17,15 @@ arguments:
   - prefix: --cpus
     valueFrom: '2'
     position: 1
+  - prefix: --genome_dir
+    valueFrom: $(inputs.drep_folder.location.split('file://')[1])
+    porition: 2
   - prefix: -x
     valueFrom: 'fa'
     position: 4
 
 inputs:
-  drep_folder:
-    type: Directory
-    inputBinding:
-      position: 2
-      prefix: '--genome_dir'
+  drep_folder: Directory
   gtdb_outfolder:
     type: string
     inputBinding:
