@@ -4,16 +4,9 @@ cwlVersion: v1.0
 label: 'InterProScan: protein sequence classifier'
 
 id: i5
-baseCommand: []
+baseCommand: [interproscan.sh]
 
 arguments:
-  - position: 0
-    shellQuote: false
-    valueFrom: cp -r /opt/interproscan $(runtime.outdir)/interproscan;
-  - position: 2
-    shellQuote: false
-    valueFrom: $(runtime.outdir)/interproscan/interproscan.sh
-
   - position: 3
     prefix: '-cpu'
     valueFrom: '16'
