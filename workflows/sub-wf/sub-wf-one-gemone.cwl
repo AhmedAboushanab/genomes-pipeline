@@ -13,23 +13,21 @@ inputs:
   cluster: Directory
 
 outputs:
-  prokka_gffs:
-    type: File[]
-    outputSource: prokka/gff
+
   prokka_faa-s:
     type: File[]
     outputSource: prokka/faa
 
-  IPS_result:
-    type: File
-    outputSource: IPS/annotations
-
-  eggnog_result:
-    type: File
-    outputSource: eggnog/output
-  eggnog_result_dir:
-    type: Directory
-    outputSource: eggnog/output_dir
+#  IPS_result:
+#    type: File
+#    outputSource: IPS/annotations
+#
+#  eggnog_result:
+#    type: File
+#    outputSource: eggnog/output
+#  eggnog_result_dir:
+#    type: Directory
+#    outputSource: eggnog/output_dir
 
 steps:
   preparation:
@@ -44,19 +42,19 @@ steps:
     in:
       fa_file: preparation/files
       outdirname: { default: 'prokka'}
-    out: [gff, faa]
+    out: [faa]
 
-  IPS:
-    run: ../../tools/IPS/InterProScan.cwl
-    in:
-      inputFile: prokka/faa
-    out: [annotations]
+#  IPS:
+#    run: ../../tools/IPS/InterProScan.cwl
+#    in:
+#      inputFile: prokka/faa
+#    out: [annotations]
 
-  eggnog:
-    run: ../../tools/eggnog/eggnog.cwl
-    in:
-      fasta_file: prokka/faa
-      outputname: { default: 'eggnog_result' }
-      output_dir: { default: 'eggnog_outdit' }
-      tmp_dir: { default: 'eggnog_tmp' }
-    out: [output, output_dir]
+#  eggnog:
+#    run: ../../tools/eggnog/eggnog.cwl
+#    in:
+#      fasta_file: prokka/faa
+#      outputname: { default: 'eggnog_result' }
+#      output_dir: { default: 'eggnog_outdit' }
+#      tmp_dir: { default: 'eggnog_tmp' }
+#    out: [output, output_dir]

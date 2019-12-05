@@ -12,7 +12,7 @@ requirements:
 baseCommand: [roary]
 
 arguments:
-  - valueFrom: $(inputs.gffs.listing)
+  - valueFrom: $(inputs.gffs)
     position: 1
   - valueFrom: '16'
     position: 2
