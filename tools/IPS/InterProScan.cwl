@@ -7,18 +7,6 @@ id: i5
 baseCommand: []
 
 arguments:
-  - position: 0
-    shellQuote: false
-    valueFrom: cp -r /opt/interproscan $(runtime.outdir)/interproscan;
-  - position: 1
-    shellQuote: false
-    valueFrom: >-
-      cp -rs $(inputs.databases.path)/data/*
-      $(runtime.outdir)/interproscan/data;
-  - position: 2
-    shellQuote: false
-    valueFrom: $(runtime.outdir)/interproscan/interproscan.sh
-
   - position: 3
     prefix: '-cpu'
     valueFrom: '16'
