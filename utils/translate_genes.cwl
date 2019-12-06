@@ -21,7 +21,7 @@ inputs:
 outputs:
   converted_faa:
     type: File
-    outputSource:
+    outputBinding:
       glob: $(inputs.faa_file)
 
 requirements:
