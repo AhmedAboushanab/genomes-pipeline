@@ -36,12 +36,12 @@ inputs:
       prefix: --output
 
 outputs:
-  output:
+  annotations:
     type: File
     outputBinding:
-      glob: $(inputs.outputname)
+      glob: $(inputs.outputname)*.annotations
 
-  output_dir:
-    type: Directory
+  seed_orthologs:
+    type: File
     outputBinding:
-      glob: $(inputs.outputname)
+      glob: $(inputs.outputname)*.seed_orthologs

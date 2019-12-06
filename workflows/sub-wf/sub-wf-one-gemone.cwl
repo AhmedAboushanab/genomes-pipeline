@@ -22,12 +22,12 @@ outputs:
 #    type: File
 #    outputSource: IPS/annotations
 #
-#  eggnog_result:
-#    type: File
-#    outputSource: eggnog/output
-#  eggnog_result_dir:
-#    type: Directory
-#    outputSource: eggnog/output_dir
+  eggnog_annotations:
+    type: File
+    outputSource: eggnog/annotations
+  eggnog_seed_orthologs:
+    type: File
+    outputSource: eggnog/seed_orthologs
 
 steps:
   preparation:
@@ -50,11 +50,9 @@ steps:
 #      inputFile: prokka/faa
 #    out: [annotations]
 
-#  eggnog:
-#    run: ../../tools/eggnog/eggnog.cwl
-#    in:
-#      fasta_file: prokka/faa
-#      outputname: { default: 'eggnog_result' }
-#      output_dir: { default: 'eggnog_outdit' }
-#      tmp_dir: { default: 'eggnog_tmp' }
-#    out: [output, output_dir]
+  eggnog:
+    run: ../../tools/eggnog/eggnog.cwl
+    in:
+      fasta_file: prokka/faa
+      outputname: { default: 'eggnog_result' }
+    out: [annotations, seed_orthologs]

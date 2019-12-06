@@ -18,15 +18,18 @@ outputs:
   mash_trees:
     type: Directory
     outputSource: return_mash_dir/out
+  taxcheck_dirs:
+    type: Directory[]
+    outputSource: taxcheck/taxcheck_folder
   checkm_csv:
     type: File
     outputSource: checkm2csv/csv
-  gtdbtk:
-    type: Directory
-    outputSource: gtdbtk/gtdbtk_folder
-  mmseqs:
-    type: Directory
-    outputSource: mmseqs/outdir
+#  gtdbtk:
+#    type: Directory
+#    outputSource: gtdbtk/gtdbtk_folder
+#  mmseqs:
+#    type: Directory
+#    outputSource: mmseqs/outdir
 
 steps:
 
@@ -41,9 +44,9 @@ steps:
     scatter: genomes_fasta
     in:
       genomes_fasta: prep_taxcheck/files
-      taxcheck_outfolder: { default: 'taxcheck_dir'}
+      taxcheck_outfolder: { default: 'taxcheck'}
       taxcheck_outname: { default: 'taxcheck'}
-    out: [taxcheck_folder, taxcheck_output]
+    out: [ taxcheck_folder ]
 
   checkm:
     run: ../tools/checkm/checkm.cwl
@@ -65,13 +68,6 @@ steps:
       drep_outfolder: { default: 'drep_outfolder' }
       checkm_csv: checkm2csv/csv
     out: [ out_folder, dereplicated_genomes ]
-
-  gtdbtk:
-    run: ../tools/gtdbtk/gtdbtk.cwl
-    in:
-      drep_folder: drep/dereplicated_genomes
-      gtdb_outfolder: { default: 'gtdb_outfolder' }
-    out: [ gtdbtk_folder ]
 
   split_drep:
     run: ../tools/drep/split_drep.cwl
@@ -101,37 +97,3 @@ steps:
       dir_name: { default: 'mash_trees' }
     out: [ out ]
 
-  process_many_genomes:
-    run: sub-wf/sub-wf-many-genomes.cwl
-    scatter: cluster
-    in:
-      cluster: classify_clusters/many_genomes
-    out:
-      - prokka_faa-s
-
-  process_one_genome:
-    run: sub-wf/sub-wf-one-gemone.cwl
-    scatter: cluster
-    in:
-      cluster: classify_clusters/one_genome
-    out:
-      - prokka_faa-s
-
-  concatenate:
-    run: ../utils/concatenate.cwl
-    in:
-      files:
-        source:
-          process_many_genomes/prokka_faa-s
-          process_one_genome/prokka_faa-s
-        linkMerge: merge_flattened
-      outputFileName: { default: 'prokka_cat' }
-    out: [ result ]
-
-  mmseqs:
-    run: ../tools/mmseqs/mmseqs.cwl
-    in:
-      input_fasta: concatenate/result
-      limit_i: mmseqs_limit_i
-      limit_c: mmseqs_limit_c
-    out: [ outdir ]

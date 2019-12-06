@@ -30,12 +30,10 @@ inputs:
     inputBinding:
       position: 2
       prefix: '-c'
-
   taxcheck_outfolder: string
   taxcheck_outname: string
 
 outputs:
-
   taxcheck_folder:
     type: Directory
     outputBinding:

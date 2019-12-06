@@ -19,7 +19,9 @@ outputs:
   roary-fa:
     type: File
     outputSource: roary/pan_genome_reference-fa
-
+  translate:
+    type: File
+    outputSource: translate/converted_faa
 
 steps:
   preparation:
@@ -61,6 +63,4 @@ steps:
 #    in:
 #      fasta_file: prokka/faa
 #      outputname: { default: 'eggnog_result' }
-#      output_dir: { default: 'eggnog_outdit' }
-#      tmp_dir: { default: 'eggnog_tmp' }
-#    out: [output, output_dir]
+#    out: [annotations, seed_orthologs]
