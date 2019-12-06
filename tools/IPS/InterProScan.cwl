@@ -3,7 +3,6 @@ cwlVersion: v1.0
 
 label: 'InterProScan: protein sequence classifier'
 
-id: i5
 baseCommand: [interproscan.sh]
 
 arguments:
@@ -45,7 +44,7 @@ outputs:
       glob: $(inputs.inputFile.basename).tsv
 
 requirements:
-  - class: ShellCommandRequirement
+
   - class: ResourceRequirement
     ramMin: 20000
     coresMin: 16

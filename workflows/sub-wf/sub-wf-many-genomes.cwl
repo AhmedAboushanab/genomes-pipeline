@@ -46,6 +46,5 @@ steps:
     in:
       gffs: prokka/gff
       roary_outfolder: {default: 'roary_outfolder' }
-    out:
-      - pan_genome_reference-fa
-      - pan_genome_reference-faa
+    out: [ pan_genome_reference-fa ]
+

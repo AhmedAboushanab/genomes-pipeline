@@ -33,17 +33,7 @@ inputs:
   outputname:
     type: string
     inputBinding:
-      prefix: -o
-
-  output_dir:
-    type: string
-    inputBinding:
-      prefix: --output_dir
-
-  tmp_dir:
-    type: string
-    inputBinding:
-      prefix: --temp_dir
+      prefix: --output
 
 outputs:
   output:
@@ -54,4 +44,4 @@ outputs:
   output_dir:
     type: Directory
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: $(inputs.outputname)

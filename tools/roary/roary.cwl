@@ -9,7 +9,7 @@ requirements:
   InlineJavascriptRequirement: {}
   ScatterFeatureRequirement: {}
 
-baseCommand: [roary]
+baseCommand: [ roary ]
 
 arguments:
   - valueFrom: $(inputs.gffs)
@@ -42,11 +42,6 @@ inputs:
 
 outputs:
   pan_genome_reference-fa:
-    type: Directory #File
+    type: File
     outputBinding:
-      glob: $(inputs.roary_outfolder) #/pan_genome_reference.fa
-
-#  pan_genome_reference-faa:
-#    type: File
-#    outputBinding:
-#      glob: $(inputs.roary_outfolder)/pan_genome_reference.faa
+      glob: $(inputs.roary_outfolder)/pan_genome_reference.fa
