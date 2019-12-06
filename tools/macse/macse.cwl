@@ -26,7 +26,7 @@ inputs:
       position: 2
       prefix: '-seq'
   faa_file:
-    type: File
+    type: string
     inputBinding:
       position: 4
       prefix: '-out_AA'
