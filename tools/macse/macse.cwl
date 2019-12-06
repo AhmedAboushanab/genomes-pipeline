@@ -9,7 +9,7 @@ requirements:
   InlineJavascriptRequirement: {}
   ScatterFeatureRequirement: {}
 
-baseCommand: ["java", "-jar", "/nfs/production/interpro/metagenomics/mags-scripts/scripts/macse_v2.03.jar"]
+baseCommand: [ run_macse.sh ]
 
 arguments:
   - valueFrom: 'translateNT2AA'
@@ -31,4 +31,8 @@ inputs:
       position: 4
       prefix: '-out_AA'
 
-outputs: []
+outputs:
+  converted_faa:
+    type: File
+    outputBinding:
+      glob: $(inputs.faa_file)
