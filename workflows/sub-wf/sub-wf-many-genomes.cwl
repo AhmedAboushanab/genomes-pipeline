@@ -16,6 +16,10 @@ outputs:
   prokka_faa-s:
     type: File[]
     outputSource: prokka/faa
+  roary-fa:
+    type: File
+    outputSource: roary/pan_genome_reference-fa
+
 
 steps:
   preparation:
@@ -39,3 +43,24 @@ steps:
       roary_outfolder: {default: 'roary_outfolder' }
     out: [ pan_genome_reference-fa ]
 
+  translate:
+    run: ../../utils/translate_genes.cwl
+    in:
+      fa_file: roary/pan_genome_reference-fa
+      faa_file: { default: 'pan_genome_reference.faa' }
+    out: [ converted_faa ]
+
+#  IPS:
+#    run: ../../tools/IPS/InterProScan.cwl
+#    in:
+#      inputFile: prokka/faa
+#    out: [annotations]
+
+#  eggnog:
+#    run: ../../tools/eggnog/eggnog.cwl
+#    in:
+#      fasta_file: prokka/faa
+#      outputname: { default: 'eggnog_result' }
+#      output_dir: { default: 'eggnog_outdit' }
+#      tmp_dir: { default: 'eggnog_tmp' }
+#    out: [output, output_dir]

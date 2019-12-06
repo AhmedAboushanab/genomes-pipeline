@@ -40,8 +40,3 @@ outputs:
     type: Directory
     outputBinding:
       glob: $(inputs.genomes_fasta.nameroot)_$(inputs.taxcheck_outfolder)
-
-  taxcheck_output:
-    type: File
-    outputBinding:
-      glob: $(inputs.genomes_fasta.nameroot)_$(inputs.taxcheck_outname)
