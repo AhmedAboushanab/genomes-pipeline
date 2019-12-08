@@ -20,7 +20,7 @@ arguments:
     valueFrom: 'TSV'
     prefix: '-f'
   - position: 8
-    valueFrom: $(inputs.inputFile.basename)
+    valueFrom: $(inputs.inputFile.nameroot).tsv
     prefix: '-o'
 
 inputs:
@@ -41,7 +41,7 @@ outputs:
   - id: annotations
     type: File
     outputBinding:
-      glob: $(inputs.inputFile.basename).tsv
+      glob: $(inputs.inputFile.nameroot).tsv
 
 requirements:
 
