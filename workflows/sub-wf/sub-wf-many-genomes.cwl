@@ -22,6 +22,15 @@ outputs:
   translate:
     type: File
     outputSource: translate/converted_faa
+  IPS_annotations:
+    type: File
+    outputSource: IPS/annotations
+  eggnog_annotations:
+    type: File
+    outputSource: eggnog/annotations
+  eggnog_seed_orthologs:
+    type: File
+    outputSource: eggnog/seed_orthologs
 
 steps:
   preparation:
@@ -52,15 +61,15 @@ steps:
       faa_file: { default: 'pan_genome_reference.faa' }
     out: [ converted_faa ]
 
-#  IPS:
-#    run: ../../tools/IPS/InterProScan.cwl
-#    in:
-#      inputFile: prokka/faa
-#    out: [annotations]
+  IPS:
+    run: ../../tools/IPS/InterProScan.cwl
+    in:
+      inputFile: prokka/faa
+    out: [annotations]
 
-#  eggnog:
-#    run: ../../tools/eggnog/eggnog.cwl
-#    in:
-#      fasta_file: prokka/faa
-#      outputname: { default: 'eggnog_result' }
-#    out: [annotations, seed_orthologs]
+  eggnog:
+    run: ../../tools/eggnog/eggnog.cwl
+    in:
+      fasta_file: prokka/faa
+      outputname: { default: 'eggnog_result' }
+    out: [annotations, seed_orthologs]

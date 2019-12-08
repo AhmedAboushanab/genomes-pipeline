@@ -18,10 +18,10 @@ outputs:
     type: File[]
     outputSource: prokka/faa
 
-#  IPS_result:
-#    type: File
-#    outputSource: IPS/annotations
-#
+  IPS_result:
+    type: File
+    outputSource: IPS/annotations
+
   eggnog_annotations:
     type: File
     outputSource: eggnog/annotations
@@ -44,11 +44,11 @@ steps:
       outdirname: { default: 'prokka'}
     out: [faa]
 
-#  IPS:
-#    run: ../../tools/IPS/InterProScan.cwl
-#    in:
-#      inputFile: prokka/faa
-#    out: [annotations]
+  IPS:
+    run: ../../tools/IPS/InterProScan.cwl
+    in:
+      inputFile: prokka/faa
+    out: [annotations]
 
   eggnog:
     run: ../../tools/eggnog/eggnog.cwl
