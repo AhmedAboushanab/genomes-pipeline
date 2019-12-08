@@ -1,3 +1,5 @@
-genomes_folder: /hps/nobackup2/production/metagenomics/databases/human-gut_resource/cwl_pipeline/test_genomes/
+genomes_folder:
+  class: Directory
+  path: /hps/nobackup2/production/metagenomics/databases/human-gut_resource/cwl_pipeline/test_genomes/
 mmseqs_limit_i: 100
 mmseqs_limit_c: 80
