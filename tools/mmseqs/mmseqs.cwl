@@ -36,4 +36,4 @@ outputs:
   outdir:
     type: Directory
     outputBinding:
-      glob: 'mmseqs'$(inputs.limit_i).toString()'_outdir'
+      glob: mmseqs_$(inputs.limit_i)_outdir
