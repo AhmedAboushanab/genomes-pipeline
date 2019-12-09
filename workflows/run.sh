@@ -12,8 +12,8 @@ export OUT_DIR=/hps/nobackup2/production/metagenomics/pipeline/testing/kate_out
 export PIPELINE_FOLDER=/hps/nobackup2/production/metagenomics/databases/human-gut_resource/cwl_pipeline/genomes-pipeline
 
 export NAME_RUN=test-genomes-mmseqs
-export CWL=$PIPELINE_FOLDER/workflows/wf-test.cwl
-export YML=$PIPELINE_FOLDER/workflows/test-wf.yml
+export CWL=$PIPELINE_FOLDER/workflows/wf.cwl
+export YML=$PIPELINE_FOLDER/workflows/wf.yml
 
 # < set up folders >
 export JOB_TOIL_FOLDER=$WORK_DIR/$NAME_RUN/
@@ -36,5 +36,6 @@ time cwltoil \
   --outdir $OUT_TOOL \
   --logFile $LOG_DIR/${NAME_RUN}.log \
   --defaultCores $NUM_CORES \
+  --maxLocalJobs 10 \
 $CWL $YML
 
