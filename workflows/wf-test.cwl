@@ -29,7 +29,7 @@ steps:
     run: ../utils/concatenate.cwl
     in:
       files: faas
-      outputFileName: { default: 'prokka_cat' }
+      outputFileName: { default: 'prokka_cat.fa' }
     out: [ result ]
 
   mmseqs:
