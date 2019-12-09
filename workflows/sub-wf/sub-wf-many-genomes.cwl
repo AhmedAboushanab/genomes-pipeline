@@ -16,21 +16,10 @@ outputs:
   prokka_faa-s:
     type: File[]
     outputSource: prokka/faa
-  roary-fa:
-    type: File
-    outputSource: roary/pan_genome_reference-fa
-  translate:
-    type: File
-    outputSource: translate/converted_faa
-  IPS_annotations:
-    type: File
-    outputSource: IPS/annotations
-  eggnog_annotations:
-    type: File
-    outputSource: eggnog/annotations
-  eggnog_seed_orthologs:
-    type: File
-    outputSource: eggnog/seed_orthologs
+
+  cluster_folder:
+    type: Directory
+    outputSource: create_cluster_folder/out
 
 steps:
   preparation:
@@ -75,5 +64,19 @@ steps:
       fasta_file: translate/converted_faa
       outputname:
         source: cluster
-        valueFrom: $(self.basename)_eggnog
+        valueFrom: $(self.basename)
     out: [annotations, seed_orthologs]
+
+  create_cluster_folder:
+    run: ../../utils/return_directory.cwl
+    in:
+      list:
+        - roary/pan_genome_reference-fa
+        - translate/converted_faa
+        - IPS/annotations
+        - eggnog/annotations
+        - eggnog/seed_orthologs
+      dir_name:
+        source: cluster
+        valueFrom: cluster_$(self.basename)
+    out: [ out ]

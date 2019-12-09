@@ -11,8 +11,8 @@ requirements:
 
 inputs:
   genomes_folder: Directory
-  mmseqs_limit_c: int
-  mmseqs_limit_i: int
+  mmseqs_limit_c: float
+  mmseqs_limit_i: float
 
 outputs:
   mash_trees:
@@ -24,12 +24,18 @@ outputs:
   checkm_csv:
     type: File
     outputSource: checkm2csv/csv
-#  gtdbtk:
-#    type: Directory
-#    outputSource: gtdbtk/gtdbtk_folder
-#  mmseqs:
-#    type: Directory
-#    outputSource: mmseqs/outdir
+  gtdbtk:
+    type: Directory
+    outputSource: gtdbtk/gtdbtk_folder
+  many_genomes:
+    type: Directory[]
+    outputSource: process_many_genomes/cluster_folder
+  one_genome:
+    type: Directory[]
+    outputSource: process_one_genome/cluster_folder
+  mmseqs:
+    type: Directory
+    outputSource: mmseqs/outdir
 
 steps:
 # ----------- << taxcheck >> -----------
@@ -86,8 +92,24 @@ steps:
     out: [many_genomes, one_genome, mash_folder]
 
 # ----------- << many genomes cluster processing >> -----------
+  process_many_genomes:
+    run: sub-wf/sub-wf-many-genomes.cwl
+    scatter: cluster
+    in:
+      cluster: classify_clusters/many_genomes
+    out:
+      - prokka_faa-s
+      - cluster_folder
 
 # ----------- << one genome cluster processing >> -----------
+  process_one_genome:
+    run: sub-wf/sub-wf-one-genome.cwl
+    scatter: cluster
+    in:
+      cluster: classify_clusters/one_genome
+    out:
+      - prokka_faa-s
+      - cluster_folder
 
 # ----------- << mash trees >> -----------
   process_mash:
@@ -105,3 +127,29 @@ steps:
     out: [ out ]
 
 # ----------- << GTDB - Tk >> -----------
+  gtdbtk:
+    run: ../tools/gtdbtk/gtdbtk.cwl
+    in:
+      drep_folder: drep/dereplicated_genomes
+      gtdb_outfolder: { default: 'gtdb_outfolder' }
+    out: [ gtdbtk_folder ]
+
+# ----------- << mmseqs >> -----------
+  concatenate:
+    run: ../utils/concatenate.cwl
+    in:
+      files:
+        source:
+          - process_many_genomes/prokka_faa-s
+          - process_one_genome/prokka_faa-s
+        linkMerge: merge_flattened
+      outputFileName: { default: 'prokka_cat' }
+    out: [ result ]
+
+  mmseqs:
+    run: ../tools/mmseqs/mmseqs.cwl
+    in:
+      input_fasta: concatenate/result
+      limit_i: mmseqs_limit_i
+      limit_c: mmseqs_limit_c
+    out: [ outdir ]

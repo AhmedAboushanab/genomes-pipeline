@@ -18,16 +18,9 @@ outputs:
     type: File[]
     outputSource: prokka/faa
 
-  IPS_result:
-    type: File
-    outputSource: IPS/annotations
-
-  eggnog_annotations:
-    type: File
-    outputSource: eggnog/annotations
-  eggnog_seed_orthologs:
-    type: File
-    outputSource: eggnog/seed_orthologs
+  cluster_folder:
+    type: Directory
+    outputSource: create_cluster_folder/out
 
 steps:
   preparation:
@@ -41,7 +34,9 @@ steps:
     scatter: fa_file
     in:
       fa_file: preparation/files
-      outdirname: { default: 'prokka'}
+      outdirname:
+        source: cluster
+        valueFrom: $(self.basename)_prokka
     out: [faa]
 
   IPS:
@@ -54,5 +49,19 @@ steps:
     run: ../../tools/eggnog/eggnog.cwl
     in:
       fasta_file: prokka/faa
-      outputname: { default: 'eggnog_result' }
+      outputname:
+        source: cluster
+        valueFrom: $(self.basename)
     out: [annotations, seed_orthologs]
+
+  create_cluster_folder:
+    run: ../../utils/return_directory.cwl
+    in:
+      list:
+        - IPS/annotations
+        - eggnog/annotations
+        - eggnog/seed_orthologs
+      dir_name:
+        source: cluster
+        valueFrom: cluster_$(self.basename)
+    out: [ out ]

@@ -16,10 +16,6 @@ arguments:
     prefix: -t
   - valueFrom: 'mmseqs'$(inputs.limit_i).toString()'_outdir'
     prefix: -o
-  - valueFrom: (0.01*$(inputs.limit_c)).toString()
-    prefix: -c
-  - valueFrom: (0.01*$(inputs.limit_i)).toString()
-    prefix: -i
 
 inputs:
   input_fasta:
@@ -27,8 +23,14 @@ inputs:
     inputBinding:
       prefix: '-f'
 
-  limit_i: int
-  limit_c: int
+  limit_i:
+    type: float
+    inputBinding:
+      prefix: -i
+  limit_c:
+    type: float
+    inputBinding:
+      prefix: -c
 
 outputs:
   outdir:
