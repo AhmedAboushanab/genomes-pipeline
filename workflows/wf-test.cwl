@@ -36,6 +36,6 @@ steps:
     run: ../tools/mmseqs/mmseqs.cwl
     in:
       input_fasta: concatenate/result
-      limit_i: mmseqs_limit_i
-      limit_c: mmseqs_limit_c
+      limit_i: limit_i
+      limit_c: limit_c
     out: [ outdir ]
