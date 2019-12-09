@@ -2,8 +2,6 @@
 cwlVersion: v1.0
 class: CommandLineTool
 
-label: "checkm"
-
 requirements:
   ResourceRequirement:
     ramMin: 500000
@@ -33,7 +31,6 @@ inputs:
       prefix: '--out_dir'
 
 outputs:
-
   gtdbtk_folder:
     type: Directory
     outputBinding:
