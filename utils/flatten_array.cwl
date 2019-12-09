@@ -17,17 +17,17 @@ inputs:
     inputBinding:
       loadContents: true
 
-  outputs:
-    array1d:
-      type: File[]
+outputs:
+  array1d:
+    type: File[]
 
-  expression: >
-    ${
-      var newArray= [];
-      for (var i = 0; i < inputs.arrayTwoDim.length; i++) {
-        for (var k = 0; k < inputs.arrayTwoDim[i].length; k++) {
-          newArray.push((inputs.arrayTwoDim[i])[k]);
-        }
+expression: >
+  ${
+    var newArray= [];
+    for (var i = 0; i < inputs.arrayTwoDim.length; i++) {
+      for (var k = 0; k < inputs.arrayTwoDim[i].length; k++) {
+        newArray.push((inputs.arrayTwoDim[i])[k]);
       }
-      return { 'array1d' : newArray }
     }
+    return { 'array1d' : newArray }
+  }
