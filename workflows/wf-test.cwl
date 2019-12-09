@@ -10,27 +10,32 @@ requirements:
   ScatterFeatureRequirement: {}
 
 inputs:
-  split: Directory
+  faas: File[]
+  limit_i: float
+  limit_c: float
 
 outputs:
-  output_file:
-    type: File[]
-    outputSource: taxcheck/taxcheck_output
-  output_folder:
-    type: Directory[]
-    outputSource: taxcheck/taxcheck_folder
-steps:
-  prep_step:
-    run: ../utils/get_files_from_dir.cwl
-    in:
-      dir: split
-    out: [files]
+  cat:
+    type: File
+    outputSource: concatenate/result
 
-  taxcheck:
-    run: ../tools/taxcheck/taxcheck.cwl
-    scatter: genomes_fasta
+  mmseqs:
+    type: Directory
+    outputSource: mmseqs/outdir
+
+
+steps:
+  concatenate:
+    run: ../utils/concatenate.cwl
     in:
-      genomes_fasta: prep_step/files
-      taxcheck_outfolder: { default: 'outdir'}
-      taxcheck_outname: { default: 'outname'}
-    out: [taxcheck_folder, taxcheck_output]
+      files: faas
+      outputFileName: { default: 'prokka_cat' }
+    out: [ result ]
+
+  mmseqs:
+    run: ../tools/mmseqs/mmseqs.cwl
+    in:
+      input_fasta: concatenate/result
+      limit_i: mmseqs_limit_i
+      limit_c: mmseqs_limit_c
+    out: [ outdir ]
