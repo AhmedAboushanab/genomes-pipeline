@@ -3,7 +3,7 @@
 source /nfs/production/interpro/metagenomics/mags-scripts/annot-config
 source /hps/nobackup2/production/metagenomics/pipeline/testing/kate/toil-3.19.0/bin/activate
 export PATH=$PATH:/homes/emgpr/.nvm/versions/node/v12.10.0/bin/
-export TOIL_LSF_ARGS="-P bigmem'
+export TOIL_LSF_ARGS="-P bigmem"
 
 export MEMORY=20G
 export NUM_CORES=8
