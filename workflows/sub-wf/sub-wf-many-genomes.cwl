@@ -66,13 +66,13 @@ steps:
   IPS:
     run: ../../tools/IPS/InterProScan.cwl
     in:
-      inputFile: prokka/faa
+      inputFile: translate/converted_faa
     out: [annotations]
 
   eggnog:
     run: ../../tools/eggnog/eggnog.cwl
     in:
-      fasta_file: prokka/faa
+      fasta_file: translate/converted_faa
       outputname:
         source: cluster
         valueFrom: $(self.basename)_eggnog
