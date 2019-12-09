@@ -37,18 +37,22 @@ steps:
       outdirname:
         source: cluster
         valueFrom: $(self.basename)_prokka
-    out: [faa]
+    out: [ faa ]
 
   IPS:
     run: ../../tools/IPS/InterProScan.cwl
     in:
-      inputFile: prokka/faa
+      inputFile:
+        source: prokka/faa
+        valueFrom: $(self.listing[0].basename)
     out: [annotations]
 
   eggnog:
     run: ../../tools/eggnog/eggnog.cwl
     in:
-      fasta_file: prokka/faa
+      fasta_file:
+        source: prokka/faa
+        valueFrom: $(self.listing[0].basename)
       outputname:
         source: cluster
         valueFrom: $(self.basename)
