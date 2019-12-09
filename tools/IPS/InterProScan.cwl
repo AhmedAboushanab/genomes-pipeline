@@ -33,8 +33,6 @@ inputs:
     doc: >-
       Optional, path to fasta file that should be loaded on Master startup.
       Alternatively, in CONVERT mode, the InterProScan 5 XML file to convert.
-  - id: outdir
-    type: string
 
 
 outputs:
