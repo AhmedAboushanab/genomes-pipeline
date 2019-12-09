@@ -135,15 +135,28 @@ steps:
     out: [ gtdbtk_folder ]
 
 # ----------- << mmseqs >> -----------
+
+  flatten_many:
+   run: ../utils/flatten_array.cwl
+   in:
+     arrayTwoDim: process_many_genomes/prokka_faa-s
+   out: [array1d]
+
+  flatten_one:
+   run: ../utils/flatten_array.cwl
+   in:
+     arrayTwoDim: process_one_genome/prokka_faa-s
+   out: [array1d]
+
   concatenate:
     run: ../utils/concatenate.cwl
     in:
       files:
         source:
-          - process_many_genomes/prokka_faa-s
-          - process_one_genome/prokka_faa-s
+          - flatten_many/array1d
+          - flatten_one/array1d
         linkMerge: merge_flattened
-      outputFileName: { default: 'prokka_cat' }
+      outputFileName: { default: 'prokka_cat.fa' }
     out: [ result ]
 
   mmseqs:
