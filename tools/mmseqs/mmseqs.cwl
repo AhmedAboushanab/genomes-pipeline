@@ -14,7 +14,7 @@ baseCommand: [ mmseqs_wf.sh ]
 arguments:
   - valueFrom: '32'
     prefix: -t
-  - valueFrom: 'mmseqs'$(inputs.limit_i).toString()'_outdir'
+  - valueFrom: mmseqs_$(inputs.limit_i)_outdir
     prefix: -o
 
 inputs:
