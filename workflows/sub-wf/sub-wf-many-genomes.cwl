@@ -58,7 +58,9 @@ steps:
     run: ../../utils/translate_genes.cwl
     in:
       fa_file: roary/pan_genome_reference-fa
-      faa_file: { default: 'pan_genome_reference.faa' }
+      faa_file:
+        source: cluster
+        valueFrom: $(self.basename)_pan_genome_reference.faa
     out: [ converted_faa ]
 
   IPS:
@@ -71,5 +73,7 @@ steps:
     run: ../../tools/eggnog/eggnog.cwl
     in:
       fasta_file: prokka/faa
-      outputname: { default: 'eggnog_result' }
+      outputname:
+        source: cluster
+        valueFrom: $(self.basename)_eggnog
     out: [annotations, seed_orthologs]

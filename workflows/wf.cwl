@@ -32,7 +32,7 @@ outputs:
 #    outputSource: mmseqs/outdir
 
 steps:
-
+# ----------- << taxcheck >> -----------
   prep_taxcheck:
     run: ../utils/get_files_from_dir.cwl
     in:
@@ -48,6 +48,7 @@ steps:
       taxcheck_outname: { default: 'taxcheck'}
     out: [ taxcheck_folder ]
 
+# ----------- << checkm >> -----------
   checkm:
     run: ../tools/checkm/checkm.cwl
     in:
@@ -61,6 +62,7 @@ steps:
       out_checkm: checkm/stdout
     out: [ csv ]
 
+# ----------- << drep >> -----------
   drep:
     run: ../tools/drep/drep.cwl
     in:
@@ -83,6 +85,11 @@ steps:
       clusters: split_drep/split_out
     out: [many_genomes, one_genome, mash_folder]
 
+# ----------- << many genomes cluster processing >> -----------
+
+# ----------- << one genome cluster processing >> -----------
+
+# ----------- << mash trees >> -----------
   process_mash:
     scatter: input_mash
     run: ../tools/mash2nwk/mash2nwk.cwl
@@ -97,3 +104,4 @@ steps:
       dir_name: { default: 'mash_trees' }
     out: [ out ]
 
+# ----------- << GTDB - Tk >> -----------
