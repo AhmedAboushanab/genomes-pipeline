@@ -21,6 +21,8 @@ export LOG_DIR=${OUT_DIR}/logs_${NAME_RUN}
 export TMPDIR=${WORK_DIR}/global-temp-dir_${NAME_RUN}
 export OUT_TOOL=${OUT_DIR}/${NAME_RUN}
 
+export TOIL_LSF_ARGS="-P bigmem"
+
 mkdir -p $JOB_TOIL_FOLDER $LOG_DIR $TMPDIR $OUT_TOOL && \
 cd $WORK_DIR && \
 rm -rf $JOB_TOIL_FOLDER $OUT_TOOL/* $LOG_DIR/* && \
