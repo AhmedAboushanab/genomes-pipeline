@@ -1,4 +1,11 @@
+cwlVersion: v1.0
 class: ExpressionTool
+requirements:
+  SubworkflowFeatureRequirement: {}
+  MultipleInputFeatureRequirement: {}
+  InlineJavascriptRequirement: {}
+  StepInputExpressionRequirement: {}
+  ScatterFeatureRequirement: {}
 
 inputs:
   arrayTwoDim:
