@@ -21,14 +21,14 @@ inputs:
 
 outputs:
   many_genomes:
-    type: Directory[]
+    type: Directory[]?
     outputBinding:
       glob: "many_genomes/*"
   one_genome:
-    type: Directory[]
+    type: Directory[]?
     outputBinding:
       glob: "one_genome/*"
   mash_folder:
-    type: File[]
+    type: File[]?
     outputBinding:
       glob: "mash_folder/*"

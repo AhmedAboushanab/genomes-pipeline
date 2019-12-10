@@ -44,7 +44,7 @@ steps:
     in:
       inputFile:
         source: prokka/faa
-        valueFrom: $(self.listing[0].basename)
+        valueFrom: $(self[0].location.split(':')[1])
     out: [annotations]
 
   eggnog:
@@ -52,7 +52,7 @@ steps:
     in:
       fasta_file:
         source: prokka/faa
-        valueFrom: $(self.listing[0].basename)
+        valueFrom: $(self[0].location.split(':')[1])
       outputname:
         source: cluster
         valueFrom: $(self.basename)
