@@ -11,7 +11,7 @@ requirements:
 
 inputs:
   many_genomes: Directory[]
-  mash_list: File[]
+  mash_folder: File[]
 
 outputs:
   mash_trees:
@@ -44,7 +44,7 @@ steps:
     scatter: input_mash
     run: ../tools/mash2nwk/mash2nwk.cwl
     in:
-      input_mash: mash_list
+      input_mash: mash_folder
     out: [mash_tree]
 
   return_mash_dir:
