@@ -12,7 +12,9 @@ export OUT_DIR=/hps/nobackup2/production/metagenomics/pipeline/testing/kate_out
 export PIPELINE_FOLDER=/hps/nobackup2/production/metagenomics/databases/human-gut_resource/cwl_pipeline/genomes-pipeline
 
 export NAME_RUN=test-genomes-pipeline
+export CWL=$PIPELINE_FOLDER/workflows/wf-2-many.cwl
 export YML=$PIPELINE_FOLDER/workflows/wf.yml
+#export YML=$PIPELINE_FOLDER/workflows/wf-2-many.yml
 
 # < set up folders >
 export JOB_TOIL_FOLDER=$WORK_DIR/$NAME_RUN/
@@ -38,7 +40,7 @@ time cwltoil \
   --logFile $LOG_DIR/${NAME_RUN}.log \
   --defaultCores $NUM_CORES \
   --writeLogs ${LOG_DIR} \
-$PIPELINE_FOLDER/workflows/wf-1.cwl ${YML} > ${OUT_TOOL_1}/out1.json
+${CWL} ${YML} > ${OUT_TOOL_1}/out1.json
 
 echo " === Parsing first output folder === "
 

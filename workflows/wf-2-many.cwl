@@ -18,7 +18,7 @@ outputs:
     type: Directory
     outputSource: return_mash_dir/out
 
-  many_genomes:
+  many_genomes_result:
     type: Directory[]
     outputSource: process_many_genomes/cluster_folder
 

@@ -31,9 +31,10 @@ steps:
 
   prokka:
     run: ../../tools/prokka/prokka.cwl
-    scatter: fa_file
     in:
-      fa_file: preparation/files
+      fa_file:
+        source: preparation/files
+        valueFrom: $(self[0])
       outdirname:
         source: cluster
         valueFrom: $(self.basename)_prokka
@@ -42,17 +43,13 @@ steps:
   IPS:
     run: ../../tools/IPS/InterProScan.cwl
     in:
-      inputFile:
-        source: prokka/faa
-        valueFrom: $(self[0].location.split(':')[1])
+      inputFile: prokka/faa
     out: [annotations]
 
   eggnog:
     run: ../../tools/eggnog/eggnog.cwl
     in:
-      fasta_file:
-        source: prokka/faa
-        valueFrom: $(self[0].location.split(':')[1])
+      fasta_file: prokka/faa
       outputname:
         source: cluster
         valueFrom: $(self.basename)
