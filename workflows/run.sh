@@ -36,6 +36,6 @@ time cwltoil \
   --outdir $OUT_TOOL \
   --logFile $LOG_DIR/${NAME_RUN}.log \
   --defaultCores $NUM_CORES \
-  --writeLogs ${LOG_DIR}
+  --writeLogs ${LOG_DIR} \
 $CWL $YML
 
