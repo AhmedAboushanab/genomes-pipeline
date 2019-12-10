@@ -28,8 +28,9 @@ if __name__ == "__main__":
         drep_clusters = args.input_folder
         clusters = os.listdir(drep_clusters)
         for cluster in clusters:
-            genomes = os.listdir(os.path.join(drep_clusters, cluster))
-            number_of_genomes = sum([1 for i in genomes if len(i.split('.fa')) > 1])
+            dir_files = os.listdir(os.path.join(drep_clusters, cluster))
+            genomes = [i for i in dir_files if i.endswith('.fa')]
+            number_of_genomes = len(genomes)
             path_cluster_many = os.path.join(NAME_MANY_GENOMES, cluster)
             path_cluster_one = os.path.join(NAME_ONE_GENOME, cluster)
 
@@ -39,7 +40,7 @@ if __name__ == "__main__":
                 for genome in genomes:
                     shutil.copy(os.path.join(drep_clusters, cluster, genome),
                                 os.path.join(path_cluster_many, genome))
-                mashes = [i for i in genomes if len(i.split('mash.tsv')) > 1]
+                mashes = [i for i in dir_files if i.endswith('mash.tsv')]
                 if len(mashes) > 0:
                     mash = mashes[0]
                     shutil.copy(os.path.join(drep_clusters, cluster, mash), os.path.join(NAME_MASH, mash))
