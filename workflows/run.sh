@@ -40,7 +40,7 @@ time cwltoil \
   --writeLogs ${LOG_DIR} \
 $PIPELINE_FOLDER/workflows/wf-1.cwl ${YML} > ${OUT_TOOL_1}/out1.json
 
-
+echo " === Parsing first output folder === "
 
 
 # copy csv from 1 folder

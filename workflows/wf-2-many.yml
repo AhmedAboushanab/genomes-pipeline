@@ -1,0 +1,11 @@
+many_genomes:
+  - class: Directory
+    path: /hps/nobackup2/production/metagenomics/databases/human-gut_resource/cwl_pipeline/output/split_outfolder/1_1
+  - class: Directory
+    path: /hps/nobackup2/production/metagenomics/databases/human-gut_resource/cwl_pipeline/output/split_outfolder/2_1
+
+mash_list:
+  - class: File
+    path: /hps/nobackup2/production/metagenomics/databases/human-gut_resource/cwl_pipeline/output/split_outfolder/mash_tsv/1_1_mash.tsv
+  - class: File
+    path: /hps/nobackup2/production/metagenomics/databases/human-gut_resource/cwl_pipeline/output/split_outfolder/mash_tsv/2_1_mash.tsv
