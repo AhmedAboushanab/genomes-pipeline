@@ -35,15 +35,9 @@ steps:
 
 # ----------- << prep mmseqs >> -----------
 
-  flatten_one:
-   run: ../utils/flatten_array.cwl
-   in:
-     arrayTwoDim: process_one_genome/prokka_faa-s
-   out: [array1d]
-
   concatenate:
     run: ../utils/concatenate.cwl
     in:
-      files: flatten_one/array1d
+      files: process_one_genome/prokka_faa-s
       outputFileName: { default: 'prokka_one.fa' }
     out: [ result ]

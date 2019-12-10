@@ -1,0 +1,8 @@
+mmseqs_limit_i: 1
+mmseqs_limit_c: 0.8
+prokka_many:
+  class: File
+  path:
+prokka_one:
+  class: File
+  path:

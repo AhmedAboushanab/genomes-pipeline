@@ -15,7 +15,7 @@ inputs:
 outputs:
 
   prokka_faa-s:
-    type: File[]
+    type: File
     outputSource: prokka/faa
 
   cluster_folder:
