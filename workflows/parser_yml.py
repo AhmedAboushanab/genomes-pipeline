@@ -9,7 +9,7 @@ NAME_one_genome_out = "one_genome"
 NAME_mash_out = "mash_folder"
 
 def parse_json(filename, yml):
-    with open(filename, 'r') as file_input, open(yml, 'w') as yml_out:
+    with open(filename, 'r') as file_input, open(yml, 'a') as yml_out:
         data = json.load(file_input)
 
         print('=== First step: parsing for ' + NAME_many_genomes_out + ' and ' + NAME_one_genome_out)
