@@ -56,6 +56,8 @@ echo ${EXIT_CODE}
 
 echo "Yml file: ${YML_2}"
 
+mkdir -p ${OUT_TOOL_2} && rm -rf ${OUT_TOOL_2}/*
+
 if [ ${EXIT_CODE} -eq 1 ]
 then
     echo "=== Running many and one genomes sub-wf ==="
