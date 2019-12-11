@@ -1,3 +1,0 @@
-cluster:
-  class: Directory
-  path: /hps/nobackup2/production/metagenomics/databases/human-gut_resource/cwl_pipeline/output/split_outfolder/4_0

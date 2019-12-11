@@ -12,20 +12,23 @@ requirements:
 inputs:
   many_genomes: Directory[]
   mash_folder: File[]
+  one_genome: Directory[]
+  mmseqs_limit_c: float
+  mmseqs_limit_i: float
 
 outputs:
   mash_trees:
     type: Directory
     outputSource: return_mash_dir/out
-
-  many_genomes_result:
+  many_genomes:
     type: Directory[]
     outputSource: process_many_genomes/cluster_folder
-
-  prokka_cat_many:
-    type: File
-    outputSource: concatenate/result
-
+  one_genome:
+    type: Directory[]
+    outputSource: process_one_genome/cluster_folder
+  mmseqs:
+    type: Directory
+    outputSource: mmseqs/outdir
 
 steps:
 
@@ -35,6 +38,16 @@ steps:
     scatter: cluster
     in:
       cluster: many_genomes
+    out:
+      - prokka_faa-s
+      - cluster_folder
+
+# ----------- << one genome cluster processing >> -----------
+  process_one_genome:
+    run: sub-wf/sub-wf-one-genome.cwl
+    scatter: cluster
+    in:
+      cluster: cone_genome
     out:
       - prokka_faa-s
       - cluster_folder
@@ -54,7 +67,7 @@ steps:
       dir_name: { default: 'mash_trees' }
     out: [ out ]
 
-# ----------- << prep mmseqs >> -----------
+# ----------- << mmseqs >> -----------
 
   flatten_many:
    run: ../utils/flatten_array.cwl
@@ -65,6 +78,18 @@ steps:
   concatenate:
     run: ../utils/concatenate.cwl
     in:
-      files: flatten_many/array1d
-      outputFileName: { default: 'prokka_many.fa' }
+      files:
+        source:
+          - flatten_many/array1d
+          - process_one_genome/prokka_faa-s
+        linkMerge: merge_flattened
+      outputFileName: { default: 'prokka_cat.fa' }
     out: [ result ]
+
+  mmseqs:
+    run: ../tools/mmseqs/mmseqs.cwl
+    in:
+      input_fasta: concatenate/result
+      limit_i: mmseqs_limit_i
+      limit_c: mmseqs_limit_c
+    out: [ outdir ]
