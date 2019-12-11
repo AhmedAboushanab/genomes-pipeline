@@ -46,5 +46,12 @@ ${CWL} ${YML} > ${OUT_TOOL_1}/out1.json
 
 echo " === Parsing first output folder === "
 
+export YML_2=${OUT_DIR}/logs_${NAME_RUN}/wf-2.yml
+python3 $PIPELINE_FOLDER/workflows/parser_yml.py -j ${OUT_TOOL_1}/out1.json -y ${YML_2} -m 1
 
+if [ $? -eq 1 ]
+then
+    echo "Running many and one genomes part"
+
+fi
 # copy csv from 1 folder
