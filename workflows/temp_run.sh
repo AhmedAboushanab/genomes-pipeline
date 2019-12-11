@@ -3,6 +3,7 @@
 source /nfs/production/interpro/metagenomics/mags-scripts/annot-config
 source /hps/nobackup2/production/metagenomics/pipeline/testing/kate/toil-3.19.0/bin/activate
 export PATH=$PATH:/homes/emgpr/.nvm/versions/node/v12.10.0/bin/
+export PIPELINE_FOLDER=/hps/nobackup2/production/metagenomics/databases/human-gut_resource/cwl_pipeline/genomes-pipeline
 
 export NAME_RUN=test-exit3
 export CWL=$PIPELINE_FOLDER/workflows/wf-exit-3.cwl
@@ -12,7 +13,6 @@ export MEMORY=20G
 export NUM_CORES=8
 export WORK_DIR=/hps/nobackup2/production/metagenomics/pipeline/testing/kate_work
 export OUT_DIR=/hps/nobackup2/production/metagenomics/pipeline/testing/kate_out
-export PIPELINE_FOLDER=/hps/nobackup2/production/metagenomics/databases/human-gut_resource/cwl_pipeline/genomes-pipeline
 # < set up folders >
 export JOB_TOIL_FOLDER=$WORK_DIR/$NAME_RUN/
 export LOG_DIR=${OUT_DIR}/logs_${NAME_RUN}
