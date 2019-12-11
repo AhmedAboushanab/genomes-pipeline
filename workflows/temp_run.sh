@@ -5,8 +5,8 @@ source /hps/nobackup2/production/metagenomics/pipeline/testing/kate/toil-3.19.0/
 export PATH=$PATH:/homes/emgpr/.nvm/versions/node/v12.10.0/bin/
 export PIPELINE_FOLDER=/hps/nobackup2/production/metagenomics/databases/human-gut_resource/cwl_pipeline/genomes-pipeline
 
-export NAME_RUN=test-exit3
-export CWL=$PIPELINE_FOLDER/workflows/wf-exit-3.cwl
+export NAME_RUN=test-mash2nwk
+export CWL=$PIPELINE_FOLDER/workflows/test_mash.cwl
 export YML=/hps/nobackup2/production/metagenomics/pipeline/testing/kate_out/logs_genomes-pipeline/wf-2.yml
 
 export MEMORY=20G
