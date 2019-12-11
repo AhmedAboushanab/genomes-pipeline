@@ -7,7 +7,7 @@ export PIPELINE_FOLDER=/hps/nobackup2/production/metagenomics/databases/human-gu
 
 export NAME_RUN=test-mash2nwk
 export CWL=$PIPELINE_FOLDER/workflows/test_mash.cwl
-export YML=/hps/nobackup2/production/metagenomics/pipeline/testing/kate_out/logs_genomes-pipeline/wf-2.yml
+export YML=$PIPELINE_FOLDER/workflows/yml_patterns/wf-2.yml
 
 export MEMORY=20G
 export NUM_CORES=8
