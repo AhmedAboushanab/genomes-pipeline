@@ -17,7 +17,7 @@ inputs:
   mmseqs_limit_i: float
 
 outputs:
-  mash_trees:
+  mash_folder:
     type: Directory
     outputSource: return_mash_dir/out
   many_genomes:
@@ -47,7 +47,7 @@ steps:
     run: sub-wf/sub-wf-one-genome.cwl
     scatter: cluster
     in:
-      cluster: cone_genome
+      cluster: one_genome
     out:
       - prokka_faa-s
       - cluster_folder
