@@ -15,11 +15,16 @@ export NAME_RUN=genomes-pipeline
 export CWL=$PIPELINE_FOLDER/workflows/wf-1.cwl
 export YML=$PIPELINE_FOLDER/workflows/wf-1.yml
 
+export CWL_BOTH=$PIPELINE_FOLDER/workflows/wf-exit-1.cwl
+export CWL_ONE=$PIPELINE_FOLDER/workflows/wf-exit-3.cwl
+export CWL_MANY=$PIPELINE_FOLDER/workflows/wf-exit-2.cwl
+
 # < set up folders >
 export JOB_TOIL_FOLDER=$WORK_DIR/$NAME_RUN/
 export LOG_DIR=${OUT_DIR}/logs_${NAME_RUN}
 export TMPDIR=${WORK_DIR}/global-temp-dir_${NAME_RUN}
 export OUT_TOOL_1=${OUT_DIR}/${NAME_RUN}_1
+export OUT_TOOL_2=${OUT_DIR}/${NAME_RUN}_2
 
 export TOIL_LSF_ARGS="-P bigmem"
 
@@ -36,38 +41,72 @@ time cwltoil \
   --defaultMemory $MEMORY \
   --jobStore $JOB_TOIL_FOLDER \
   --outdir $OUT_TOOL_1 \
-  --logFile $LOG_DIR/${NAME_RUN}.log \
+  --logFile $LOG_DIR/${NAME_RUN}_1.log \
   --defaultCores $NUM_CORES \
   --writeLogs ${LOG_DIR} \
-${CWL} ${YML} > ${OUT_TOOL_1}/out1.json
+${CWL} ${YML} > ${OUT_TOOL_1}/out.json
 
 echo " === Parsing first output folder === "
 
-export YML_2=${OUT_DIR}/logs_${NAME_RUN}/wf-2.yml
-python3 $PIPELINE_FOLDER/workflows/parser_yml.py -j ${OUT_TOOL_1}/out1.json -y ${YML_2}
+export YML_2=$PIPELINE_FOLDER/workflows/yml_patterns/wf-2.yml
+
+python3 $PIPELINE_FOLDER/workflows/parser_yml.py -j ${OUT_TOOL_1}/out.json -y ${YML_2}
 export EXIT_CODE=$?
 echo ${EXIT_CODE}
 
-echo "
-mmseqs_limit_i: 1
-mmseqs_limit_c: 0.8" >> ${YML_2}
-
-echo "Yml file ${YML_2}"
+echo "Yml file: ${YML_2}"
 
 if [ ${EXIT_CODE} -eq 1 ]
 then
-    echo "Running many and one genomes sub-wf"
+    echo "=== Running many and one genomes sub-wf ==="
+    time cwltoil \
+        --no-container \
+        --batchSystem LSF \
+        --disableCaching \
+        --logDebug \
+        --defaultMemory $MEMORY \
+        --jobStore $JOB_TOIL_FOLDER \
+        --outdir $OUT_TOOL_2 \
+        --logFile $LOG_DIR/${NAME_RUN}_2.log \
+        --defaultCores $NUM_CORES \
+        --writeLogs ${LOG_DIR} \
+    ${CWL_BOTH} ${YML_2} > ${OUT_TOOL_2}/out.json
 fi
 if [ ${EXIT_CODE} -eq 2 ]
 then
-    echo "Running many genomes sub-wf"
+    echo " === Running many genomes sub-wf === "
+    time cwltoil \
+        --no-container \
+        --batchSystem LSF \
+        --disableCaching \
+        --logDebug \
+        --defaultMemory $MEMORY \
+        --jobStore $JOB_TOIL_FOLDER \
+        --outdir $OUT_TOOL_2 \
+        --logFile $LOG_DIR/${NAME_RUN}_2.log \
+        --defaultCores $NUM_CORES \
+        --writeLogs ${LOG_DIR} \
+    ${CWL_MANY} ${YML_2} > ${OUT_TOOL_2}/out.json
 fi
 if [ ${EXIT_CODE} -eq 3 ]
 then
-    echo "Running one genome sub-wf"
+    echo " === Running one genome sub-wf ==="
+    time cwltoil \
+        --no-container \
+        --batchSystem LSF \
+        --disableCaching \
+        --logDebug \
+        --defaultMemory $MEMORY \
+        --jobStore $JOB_TOIL_FOLDER \
+        --outdir $OUT_TOOL_2 \
+        --logFile $LOG_DIR/${NAME_RUN}_2.log \
+        --defaultCores $NUM_CORES \
+        --writeLogs ${LOG_DIR} \
+    ${CWL_ONE} ${YML_2} > ${OUT_TOOL_2}/out.json
 fi
 if [ ${EXIT_CODE} -eq 4 ]
 then
-    echo "Something very strange happened"
+    echo "??????? Something very strange happened ????????"
 fi
+
 # copy csv from 1 folder
