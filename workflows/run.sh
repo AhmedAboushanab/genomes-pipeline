@@ -16,8 +16,8 @@ export CWL=$PIPELINE_FOLDER/workflows/wf-1.cwl
 export YML=$PIPELINE_FOLDER/workflows/wf-1.yml
 
 export CWL_BOTH=$PIPELINE_FOLDER/workflows/wf-exit-1.cwl
-export CWL_ONE=$PIPELINE_FOLDER/workflows/wf-exit-3.cwl
 export CWL_MANY=$PIPELINE_FOLDER/workflows/wf-exit-2.cwl
+export CWL_ONE=$PIPELINE_FOLDER/workflows/wf-exit-3.cwl
 
 # < set up folders >
 export JOB_TOIL_FOLDER=$WORK_DIR/$NAME_RUN/
