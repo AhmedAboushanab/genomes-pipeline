@@ -75,13 +75,13 @@ Copy all outputs to one result folder
 2) Run first workflow with: \
 cwl: workflows/wf-1.cwl \
 yml: workflows/yml_patterns/wf-1.yml (already changed to your data) \
-Save output json to separate file. Example 
+Save output json to separate file. Example \
 `cwltool workflows/wf-1.cwl workflows/yml_patterns/wf-1.yml > output-wf-1.json`
-3) Run parser of output json
+3) Run parser of output json \
 `python3 workflows/parser_yml.py -j output-wf-1.json -y workflows/yml_patterns/wf-2.yml`
-4) Check exit code of parser
+4) Check exit code of parser \
 `echo $?` \
-5*) If you want you can change manually limits for mmseqs_wf in workflows/yml_patterns/wf-2.yml \
+5*) If you want you can manually change limits for mmseqs_wf in workflows/yml_patterns/wf-2.yml \
 5) If exit code == 1: run 
 `cwltool workflows/wf-exit-1.cwl workflows/yml_patterns/wf-2.yml` \
 If exit code == 2: run 
