@@ -11,7 +11,7 @@ requirements:
   InlineJavascriptRequirement: {}
   ScatterFeatureRequirement: {}
 
-baseCommand: ["mash2nwk.R"]
+baseCommand: ["mash2nwk1.R"]
 
 inputs:
   input_mash:
