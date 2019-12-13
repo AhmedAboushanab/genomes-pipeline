@@ -20,19 +20,19 @@ outputs:
     type: Directory
     outputSource: return_mash_dir/out
 
-  translate:
-    type: File[]
-    outputSource: process_many_genomes/translate
+#  translate:
+#    type: File[]
+#    outputSource: process_many_genomes/translate
 
 steps:
 
 # ----------- << many genomes cluster processing >> -----------
-  process_many_genomes:
-    run: sub-wf/test.cwl
-    scatter: cluster
-    in:
-      cluster: many_genomes
-    out: [ translate ]
+#  process_many_genomes:
+#    run: sub-wf/test.cwl
+#    scatter: cluster
+#    in:
+#      cluster: many_genomes
+#    out: [ translate ]
 
 
 # ----------- << mash trees >> -----------
