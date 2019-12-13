@@ -15,10 +15,10 @@ inputs:
   mmseqs_limit_c: float
   mmseqs_limit_i: float
 
-outputs:
-  mash_trees:
-    type: Directory
-    outputSource: return_mash_dir/out
+outputs: []
+#  mash_trees:
+#    type: Directory
+#    outputSource: return_mash_dir/out
 
 #  translate:
 #    type: File[]
