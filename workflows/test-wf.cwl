@@ -43,11 +43,11 @@ steps:
       input_mash: mash_folder
     out: [mash_tree]
 
-  return_mash_dir:
-    run: ../utils/return_directory.cwl
-    in:
-      list: process_mash/mash_tree
-      dir_name: { default: 'mash_trees' }
-    out: [ out ]
+#  return_mash_dir:
+#    run: ../utils/return_directory.cwl
+#    in:
+#      list: process_mash/mash_tree
+#      dir_name: { default: 'mash_trees' }
+#    out: [ out ]
 
 
