@@ -7,7 +7,7 @@ export PIPELINE_FOLDER=/hps/nobackup2/production/metagenomics/databases/human-gu
 
 export NAME_RUN=test-exit2
 export CWL=$PIPELINE_FOLDER/workflows/test-wf.cwl
-export YML=$PIPELINE_FOLDER/workflows/yml_patterns/wf-2.yml
+export YML=$PIPELINE_FOLDER/workflows/wf-2-many.yml
 
 export MEMORY=20G
 export NUM_CORES=8
