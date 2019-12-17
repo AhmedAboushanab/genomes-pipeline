@@ -13,7 +13,7 @@ export PIPELINE_FOLDER=/hps/nobackup2/production/metagenomics/databases/human-gu
 
 export NAME_RUN=genomes-pipeline-exit2
 export CWL=$PIPELINE_FOLDER/workflows/wf-1.cwl
-export YML=$PIPELINE_FOLDER/workflows/wf-1.yml
+export YML=$PIPELINE_FOLDER/input_example/ymls/wf-1.yml
 
 export CWL_BOTH=$PIPELINE_FOLDER/workflows/wf-exit-1.cwl
 export CWL_MANY=$PIPELINE_FOLDER/workflows/wf-exit-2.cwl
@@ -37,7 +37,6 @@ time cwltoil \
   --no-container \
   --batchSystem LSF \
   --disableCaching \
-  --logDebug \
   --defaultMemory $MEMORY \
   --jobStore $JOB_TOIL_FOLDER \
   --outdir $OUT_TOOL_1 \
@@ -48,9 +47,10 @@ ${CWL} ${YML} > ${OUT_TOOL_1}/out.json
 
 echo " === Parsing first output folder === "
 
-export YML_2=$PIPELINE_FOLDER/workflows/yml_patterns/wf-2.yml
+cp $PIPELINE_FOLDER/workflows/yml_patterns/wf-2.yml ${OUT_TOOL_1}
+export YML_2=${OUT_TOOL_1}/wf-2.yml
 
-python3 $PIPELINE_FOLDER/workflows/parser_yml.py -j ${OUT_TOOL_1}/out.json -y ${YML_2}
+python3 $PIPELINE_FOLDER/utils/parser_yml.py -j ${OUT_TOOL_1}/out.json -y ${YML_2}
 export EXIT_CODE=$?
 echo ${EXIT_CODE}
 

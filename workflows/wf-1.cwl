@@ -17,12 +17,12 @@ outputs:
   checkm_csv:
     type: File
     outputSource: checkm2csv/csv
-#  gtdbtk:
-#    type: Directory
-#    outputSource: gtdbtk/gtdbtk_folder
-#  taxcheck_dirs:
-#    type: Directory[]
-#    outputSource: taxcheck/taxcheck_folder
+  gtdbtk:
+    type: Directory
+    outputSource: gtdbtk/gtdbtk_folder
+  taxcheck_dirs:
+    type: Directory[]
+    outputSource: taxcheck/taxcheck_folder
 
   many_genomes:
     type: Directory[]?
@@ -36,20 +36,20 @@ outputs:
 
 steps:
 # ----------- << taxcheck >> -----------
-#  prep_taxcheck:
-#    run: ../utils/get_files_from_dir.cwl
-#    in:
-#      dir: genomes_folder
-#    out: [files]
+  prep_taxcheck:
+    run: ../utils/get_files_from_dir.cwl
+    in:
+      dir: genomes_folder
+    out: [files]
 
-#  taxcheck:
-#    run: ../tools/taxcheck/taxcheck.cwl
-#    scatter: genomes_fasta
-#    in:
-#      genomes_fasta: prep_taxcheck/files
-#      taxcheck_outfolder: { default: 'taxcheck'}
-#      taxcheck_outname: { default: 'taxcheck'}
-#    out: [ taxcheck_folder ]
+  taxcheck:
+    run: ../tools/taxcheck/taxcheck.cwl
+    scatter: genomes_fasta
+    in:
+      genomes_fasta: prep_taxcheck/files
+      taxcheck_outfolder: { default: 'taxcheck'}
+      taxcheck_outname: { default: 'taxcheck'}
+    out: [ taxcheck_folder ]
 
 # ----------- << checkm >> -----------
   checkm:
@@ -89,9 +89,9 @@ steps:
     out: [many_genomes, one_genome, mash_folder]
 
 # ----------- << GTDB - Tk >> -----------
-#  gtdbtk:
-#    run: ../tools/gtdbtk/gtdbtk.cwl
-#    in:
-#      drep_folder: drep/dereplicated_genomes
-#      gtdb_outfolder: { default: 'gtdb_outfolder' }
-#    out: [ gtdbtk_folder ]
+  gtdbtk:
+    run: ../tools/gtdbtk/gtdbtk.cwl
+    in:
+      drep_folder: drep/dereplicated_genomes
+      gtdb_outfolder: { default: 'gtdb_outfolder' }
+    out: [ gtdbtk_folder ]

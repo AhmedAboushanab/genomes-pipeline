@@ -1,0 +1,4 @@
+one_genome:
+
+mmseqs_limit_i: 1
+mmseqs_limit_c: 0.8
