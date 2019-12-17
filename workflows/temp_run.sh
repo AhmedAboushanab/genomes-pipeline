@@ -6,7 +6,7 @@ source /hps/nobackup2/production/metagenomics/pipeline/tools-v5/toil-user-env/bi
 export PATH=$PATH:/homes/emgpr/.nvm/versions/node/v12.10.0/bin/
 export PIPELINE_FOLDER=/hps/nobackup2/production/metagenomics/databases/human-gut_resource/cwl_pipeline/genomes-pipeline
 
-export NAME_RUN=test-exit2
+export NAME_RUN=test-exit2-mash
 export CWL=$PIPELINE_FOLDER/tools/mash2nwk/mash2nwk.cwl  #workflows/test-wf.cwl
 export YML=$PIPELINE_FOLDER/tools/mash2nwk/test.yml  #workflows/wf-2-many.yml
 
