@@ -65,7 +65,6 @@ then
         --no-container \
         --batchSystem LSF \
         --disableCaching \
-        --logDebug \
         --defaultMemory $MEMORY \
         --jobStore $JOB_TOIL_FOLDER \
         --outdir $OUT_TOOL_2 \
@@ -81,7 +80,6 @@ then
         --no-container \
         --batchSystem LSF \
         --disableCaching \
-        --logDebug \
         --defaultMemory $MEMORY \
         --jobStore $JOB_TOIL_FOLDER \
         --outdir $OUT_TOOL_2 \
@@ -97,7 +95,6 @@ then
         --no-container \
         --batchSystem LSF \
         --disableCaching \
-        --logDebug \
         --defaultMemory $MEMORY \
         --jobStore $JOB_TOIL_FOLDER \
         --outdir $OUT_TOOL_2 \
