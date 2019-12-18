@@ -68,6 +68,30 @@ Step 2.2 + 2.3
 #### Finally
 Copy all outputs to one result folder
 
+## Dependencies
+- R (tested v3.5.2)
+- Python v2.7 and v3.6
+- CheckM (tested v1.0.11)
+- Contig Annotation Tool (tested v5.0)
+- GTDB-Tk (tested v0.3.1 and v1.0.2)
+- dRep (tested v2.2.4)
+- Prokka (tested 1.14.0)
+- Roary (tested 3.12.0)
+- MMseqs2 (tested v8-fac81)
+- InterProScan (tested v5.35-74.0 and v5.38-76.0)
+- eggNOG-mapper (tested v2.0)
+
+## Tool description
+- CheckM: Estimate genome completeness and contamination.
+- TaxCheck: Wrapper of the contig annotation tool (CAT) to predict taxonomy consistency across contigs.
+- GTDB-Tk: Genome taxonomic assignment using the GTDB framework.
+- dRep: Genome de-replication.
+- Mash2Nwk: Generate Mash distance tree of conspecific genomes.
+- Prokka: Predict protein-coding sequences from genome assembly.
+- Roary: Infer pan-genome from a set of conspecific genomes.
+- MMseqs2: Cluster protein-coding sequences.
+- InterProScan: Protein functional annotation using the InterPro database.
+- eggNOG-mapper: Protein functional annotation using the eggNOG database.
 
 ## How to run
 

@@ -29,6 +29,7 @@ export OUT_TOOL_2=${OUT_DIR}/${NAME_RUN}_2
 export TOIL_LSF_ARGS="-P bigmem"
 
 echo " === Running first part === "
+echo "Out json would be in ${OUT_TOOL_1}/out.json"
 
 mkdir -p $JOB_TOIL_FOLDER $LOG_DIR $TMPDIR $OUT_TOOL_1 && \
 cd $WORK_DIR && \
