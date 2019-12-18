@@ -87,6 +87,13 @@ then
         --defaultCores $NUM_CORES \
         --writeLogs ${LOG_DIR} \
     ${CWL_MANY} ${YML_2} > ${OUT_TOOL_2}/out.json
+
+    echo "Done. Moving results to final output folder"
+    mkdir -p ${OUT_DIR}/${NAME_RUN} && rm -rf ${OUT_DIR}/${NAME_RUN}/* && \
+    mv ${OUT_TOOL_1}/gtdb-tk_output ${OUT_TOOL_1}/checkm_quality.csv  ${OUT_DIR}/${NAME_RUN} && \
+    mkdir ${OUT_DIR}/${NAME_RUN}/taxheck_output && mv ${OUT_TOOL_1}/*_taxcheck ${OUT_DIR}/${NAME_RUN}/taxheck_output && \
+    mv ${OUT_TOOL_2}/mmseqs* ${OUT_TOOL_2}/mash_trees ${OUT_TOOL_2}/cluster* ${OUT_DIR}/${NAME_RUN}  && \
+    parallel --dry-run mv ${OUT_TOOL_1}/{}/* ${OUT_TOOL_1}/{}*.tsv ${OUT_DIR}/${NAME_RUN}/cluster_{} ::: [0-9]*_[0-9]*
 fi
 if [ ${EXIT_CODE} -eq 3 ]
 then

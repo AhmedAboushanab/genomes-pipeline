@@ -93,5 +93,5 @@ steps:
     run: ../tools/gtdbtk/gtdbtk.cwl
     in:
       drep_folder: drep/dereplicated_genomes
-      gtdb_outfolder: { default: 'gtdb_outfolder' }
+      gtdb_outfolder: { default: 'gtdb-tk_output' }
     out: [ gtdbtk_folder ]
