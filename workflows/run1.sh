@@ -13,7 +13,7 @@ export PIPELINE_FOLDER=/hps/nobackup2/production/metagenomics/databases/human-gu
 
 export NAME_RUN=genomes-pipeline-exit2
 export CWL=$PIPELINE_FOLDER/workflows/wf-1.cwl
-export YML=$PIPELINE_FOLDER/input_example/ymls/wf-1.yml
+export YML=$PIPELINE_FOLDER/input_example/ymls/wf-1-1.yml
 
 export CWL_BOTH=$PIPELINE_FOLDER/workflows/wf-exit-1.cwl
 export CWL_MANY=$PIPELINE_FOLDER/workflows/wf-exit-2.cwl
