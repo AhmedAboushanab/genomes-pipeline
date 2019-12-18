@@ -11,7 +11,7 @@ export WORK_DIR=/hps/nobackup2/production/metagenomics/pipeline/testing/kate_wor
 export OUT_DIR=/hps/nobackup2/production/metagenomics/pipeline/testing/kate_out
 export PIPELINE_FOLDER=/hps/nobackup2/production/metagenomics/databases/human-gut_resource/cwl_pipeline/genomes-pipeline
 
-export NAME_RUN=genomes-pipeline-exit2
+export NAME_RUN=genomes-pipeline-exit1
 export CWL=$PIPELINE_FOLDER/workflows/wf-1.cwl
 export YML=$PIPELINE_FOLDER/input_example/ymls/wf-1-1.yml
 
