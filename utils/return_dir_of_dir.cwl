@@ -7,7 +7,7 @@ requirements:
 
 inputs:
   directory_array:
-    type: Directory[]?
+    type: Directory
   newname:
     type: string
 
