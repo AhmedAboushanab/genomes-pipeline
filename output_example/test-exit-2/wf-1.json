@@ -1,0 +1,749 @@
+{
+    "checkm_csv": {
+        "checksum": "sha1$b318dca8b7a7304054ece48c8143dac39e26b33b", 
+        "basename": "checkm_quality.csv", 
+        "nameext": ".csv", 
+        "nameroot": "checkm_quality", 
+        "class": "File", 
+        "size": 199
+    }, 
+    "taxcheck_dirs": [
+        {
+            "basename": "GUT_GENOME000263_taxcheck", 
+            "nameext": "", 
+            "nameroot": "GUT_GENOME000263_taxcheck", 
+            "listing": [
+                {
+                    "checksum": "sha1$30a8d588f662c110bc7ff1e8600d01dcc9e79ed3", 
+                    "basename": "GUT_GENOME000263_taxcheck.summary.txt", 
+                    "size": 873, 
+                    "class": "File", 
+                }, 
+                {
+                    "checksum": "sha1$42dfa52c3459b7894f1512b4ed1e8e79c2d96354", 
+                    "basename": "GUT_GENOME000263_taxcheck.predicted_proteins.faa", 
+                    "size": 1599275, 
+                    "class": "File", 
+                }, 
+                {
+                    "checksum": "sha1$fa29f6d351c3b6999c12ab4197d449a1cc30e006", 
+                    "basename": "GUT_GENOME000263_taxcheck.ORF2LCA.txt", 
+                    "size": 169539, 
+                    "class": "File", 
+                }, 
+                {
+                    "checksum": "sha1$b938bb48b910b228273d156c43aa3b47184a5db9", 
+                    "basename": "GUT_GENOME000263_taxcheck.tax-stats.tsv", 
+                    "size": 553, 
+                    "class": "File", 
+                }, 
+                {
+                    "checksum": "sha1$cf6299065bde2ba47941416a6cabe4d2d8ddf2e9", 
+                    "basename": "GUT_GENOME000263_taxcheck.predicted_proteins.gff", 
+                    "size": 848602, 
+                    "class": "File", 
+                }, 
+                {
+                    "checksum": "sha1$9334ff7aaef217b1b8e0c6da930a8340b3ee2028", 
+                    "basename": "GUT_GENOME000263_taxcheck.contig2classification.official_names.txt", 
+                    "size": 11089, 
+                    "class": "File", 
+                }, 
+                {
+                    "checksum": "sha1$d65a37cb9333762784cd9ceaec3e76bcf83b992d", 
+                    "basename": "GUT_GENOME000263_taxcheck.alignment.diamond", 
+                    "size": 290596098, 
+                    "class": "File", 
+                }, 
+                {
+                    "checksum": "sha1$613684e83b50c89b7935c6eb64818c86bdcb7631", 
+                    "basename": "GUT_GENOME000263_taxcheck.log", 
+                    "size": 3702, 
+                    "class": "File", 
+                }, 
+                {
+                    "checksum": "sha1$d64c20be41e810430b5080ca51620011572c91c8", 
+                    "basename": "GUT_GENOME000263_taxcheck.contig2classification.txt", 
+                    "size": 4822, 
+                    "class": "File", 
+                }
+            ], 
+            "class": "Directory"
+        }, 
+        {
+            "basename": "GUT_GENOME000028_taxcheck", 
+            "nameext": "", 
+            "nameroot": "GUT_GENOME000028_taxcheck", 
+            "listing": [
+                {
+                    "checksum": "sha1$3f835ef941b7cf4c29f0f34e1a930dbe99bc73d1", 
+                    "basename": "GUT_GENOME000028_taxcheck.tax-stats.tsv", 
+                    "size": 559, 
+                    "class": "File", 
+                }, 
+                {
+                    "checksum": "sha1$463929e40058ac87ba64ea1e569d4f2022164978", 
+                    "basename": "GUT_GENOME000028_taxcheck.ORF2LCA.txt", 
+                    "size": 242331, 
+                    "class": "File", 
+                }, 
+                {
+                    "checksum": "sha1$6b2cdb4a537f671f785bf3bc194d00d7deb2c0f4", 
+                    "basename": "GUT_GENOME000028_taxcheck.log", 
+                    "size": 3702, 
+                    "class": "File", 
+                }, 
+                {
+                    "checksum": "sha1$42e878392affd3d47f16c32f8d42b9f309c171b6", 
+                    "basename": "GUT_GENOME000028_taxcheck.predicted_proteins.faa", 
+                    "size": 2223686, 
+                    "class": "File", 
+                }, 
+                {
+                    "checksum": "sha1$c6821a9abb4e3193ac5da5b08dba6b70446a8d6b", 
+                    "basename": "GUT_GENOME000028_taxcheck.summary.txt", 
+                    "size": 890, 
+                    "class": "File", 
+                }, 
+                {
+                    "checksum": "sha1$7ef9357f2edfda3913abfd3b86a2ea48f10e0086", 
+                    "basename": "GUT_GENOME000028_taxcheck.alignment.diamond", 
+                    "size": 283476381, 
+                    "class": "File", 
+                }, 
+                {
+                    "checksum": "sha1$b8f17f754026acffe0b2d807d0b091d80b306d04", 
+                    "basename": "GUT_GENOME000028_taxcheck.contig2classification.txt", 
+                    "size": 4820, 
+                    "class": "File", 
+                }, 
+                {
+                    "checksum": "sha1$b3026e5be8c7a4cbee5d1320cf21b00a503f8d87", 
+                    "basename": "GUT_GENOME000028_taxcheck.predicted_proteins.gff", 
+                    "size": 1060073, 
+                    "class": "File", 
+                }, 
+                {
+                    "checksum": "sha1$9480d591fad2f32ef2b4a56dc5ae6ba47daffa68", 
+                    "basename": "GUT_GENOME000028_taxcheck.contig2classification.official_names.txt", 
+                    "size": 10667, 
+                    "class": "File", 
+                }
+            ], 
+            "class": "Directory"
+        }, 
+        {
+            "basename": "GUT_GENOME000132_taxcheck", 
+            "nameext": "", 
+            "nameroot": "GUT_GENOME000132_taxcheck", 
+            "listing": [
+                {
+                    "checksum": "sha1$d02e2f28bf3e3a7b861040b0ce6b2ac69656c9fc", 
+                    "basename": "GUT_GENOME000132_taxcheck.contig2classification.official_names.txt", 
+                    "size": 7137, 
+                    "class": "File", 
+                }, 
+                {
+                    "checksum": "sha1$0f27c89906b06d7cbedb1d470936a19781c591fb", 
+                    "basename": "GUT_GENOME000132_taxcheck.tax-stats.tsv", 
+                    "size": 558, 
+                    "class": "File", 
+                }, 
+                {
+                    "checksum": "sha1$e4f77e1075cd0a7bc551ef7a6af18005eacf1637", 
+                    "basename": "GUT_GENOME000132_taxcheck.predicted_proteins.faa", 
+                    "size": 1532515, 
+                    "class": "File", 
+                }, 
+                {
+                    "checksum": "sha1$79ca4e7d86e83f4c66b1abb44e11f2407df9cf8b", 
+                    "basename": "GUT_GENOME000132_taxcheck.log", 
+                    "size": 3702, 
+                    "class": "File", 
+                }, 
+                {
+                    "checksum": "sha1$c5f8923318de98451672eb81aae44e24e13f007d", 
+                    "basename": "GUT_GENOME000132_taxcheck.ORF2LCA.txt", 
+                    "size": 158709, 
+                    "class": "File", 
+                }, 
+                {
+                    "checksum": "sha1$a010ec765a46dea16dfe9fe0ab4f03086625011b", 
+                    "basename": "GUT_GENOME000132_taxcheck.contig2classification.txt", 
+                    "size": 3088, 
+                    "class": "File", 
+                }, 
+                {
+                    "checksum": "sha1$132a4d54278bb381efc3bbba68ce0546eeb16967", 
+                    "basename": "GUT_GENOME000132_taxcheck.predicted_proteins.gff", 
+                    "size": 791468, 
+                    "class": "File", 
+                }, 
+                {
+                    "checksum": "sha1$b7a1ed0e1d47569a17e032418a5f483d9add1aa5", 
+                    "basename": "GUT_GENOME000132_taxcheck.summary.txt", 
+                    "size": 816, 
+                    "class": "File", 
+                }, 
+                {
+                    "checksum": "sha1$acfcb7fdef499a3942e4289e9bf738b095ce784c", 
+                    "basename": "GUT_GENOME000132_taxcheck.alignment.diamond", 
+                    "size": 280532790, 
+                    "class": "File", 
+                }
+            ], 
+            "class": "Directory"
+        }, 
+        {
+            "basename": "GUT_GENOME000070_taxcheck", 
+            "nameext": "", 
+            "nameroot": "GUT_GENOME000070_taxcheck", 
+            "listing": [
+                {
+                    "checksum": "sha1$b27b2b4b6bafc5942cffae79bf56f931ba8e2138", 
+                    "basename": "GUT_GENOME000070_taxcheck.predicted_proteins.faa", 
+                    "size": 2146052, 
+                    "class": "File", 
+                }, 
+                {
+                    "checksum": "sha1$d8ad3f9f77617af47e8a18e1133a5f4237a2d214", 
+                    "basename": "GUT_GENOME000070_taxcheck.tax-stats.tsv", 
+                    "size": 560, 
+                    "class": "File", 
+                }, 
+                {
+                    "checksum": "sha1$955b1cd44a56b0cf664c1f5ee545aa0d22f08b18", 
+                    "basename": "GUT_GENOME000070_taxcheck.log", 
+                    "size": 3702, 
+                    "class": "File", 
+                }, 
+                {
+                    "checksum": "sha1$0bdcfbc104e5c730cd9b6088c62b9e05411d5058", 
+                    "basename": "GUT_GENOME000070_taxcheck.contig2classification.txt", 
+                    "size": 5005, 
+                    "class": "File", 
+                }, 
+                {
+                    "checksum": "sha1$89f9481de1349494b89723241405f7cbfca6b2cf", 
+                    "basename": "GUT_GENOME000070_taxcheck.summary.txt", 
+                    "size": 954, 
+                    "class": "File", 
+                }, 
+                {
+                    "checksum": "sha1$377b4a5fe9b8ee3186241aad2b4171edd90570dc", 
+                    "basename": "GUT_GENOME000070_taxcheck.contig2classification.official_names.txt", 
+                    "size": 10652, 
+                    "class": "File", 
+                }, 
+                {
+                    "checksum": "sha1$d53e85f40f9e524dda497cd0a71e09d73ff4f0f5", 
+                    "basename": "GUT_GENOME000070_taxcheck.ORF2LCA.txt", 
+                    "size": 237109, 
+                    "class": "File", 
+                }, 
+                {
+                    "checksum": "sha1$2acfd2b044a0e611be963ea933d54afef26fcd64", 
+                    "basename": "GUT_GENOME000070_taxcheck.alignment.diamond", 
+                    "size": 287916199, 
+                    "class": "File", 
+                }, 
+                {
+                    "checksum": "sha1$9e68d85c86667668d2ce7caf4f451676fc52244f", 
+                    "basename": "GUT_GENOME000070_taxcheck.predicted_proteins.gff", 
+                    "size": 1031852, 
+                    "class": "File", 
+                }
+            ], 
+            "class": "Directory"
+        }
+    ], 
+    "one_genome": null, 
+    "mash_folder": [
+        {
+            "checksum": "sha1$75dd9e7c4902f8df6a0480b9f275288762b344cd", 
+            "basename": "1_1_mash.tsv", 
+            "nameext": ".tsv", 
+            "nameroot": "1_1_mash", 
+            "class": "File", 
+            "size": 252
+        }, 
+        {
+            "checksum": "sha1$71dbd44ef48e68b9c85be0585fb96066a639f4f5", 
+            "basename": "2_1_mash.tsv", 
+            "nameext": ".tsv", 
+            "nameroot": "2_1_mash", 
+            "class": "File", 
+            "size": 252
+        }
+    ], 
+    "many_genomes": [
+        {
+            "basename": "1_1", 
+            "nameext": "", 
+            "nameroot": "1_1", 
+            "listing": [
+                {
+                    "checksum": "sha1$b39eacc4125088a1c97e6ead54a59546cdfdce0c", 
+                    "basename": "GUT_GENOME000263.fa", 
+                    "size": 3864067, 
+                    "class": "File", 
+                }, 
+                {
+                    "checksum": "sha1$090c2cdef1e6b9c8d4d4e9d1bf0218e5114870c5", 
+                    "basename": "GUT_GENOME000132.fa", 
+                    "size": 3716226, 
+                    "class": "File", 
+                }
+            ], 
+            "class": "Directory"
+        }, 
+        {
+            "basename": "2_1", 
+            "nameext": "", 
+            "nameroot": "2_1", 
+            "listing": [
+                {
+                    "checksum": "sha1$250f384bf6a4abccae12d49491af24412ec37290", 
+                    "basename": "GUT_GENOME000028.fa", 
+                    "size": 5417185, 
+                    "class": "File", 
+                }, 
+                {
+                    "checksum": "sha1$eec6406eb11a5a2bdcca6347216c38b7519918f3", 
+                    "basename": "GUT_GENOME000070.fa", 
+                    "size": 5231862, 
+                    "class": "File", 
+                }
+            ], 
+            "class": "Directory"
+        }
+    ], 
+    "gtdbtk": {
+        "basename": "gtdb-tk_output", 
+        "nameext": "", 
+        "nameroot": "gtdb-tk_output", 
+        "listing": [
+            {
+                "checksum": "sha1$32746c04d909d29dad10508526d93da8b12d200b", 
+                "basename": "gtdbtk.bac120.msa.fasta", 
+                "size": 121678792, 
+                "class": "File", 
+            }, 
+            {
+                "checksum": "sha1$47c2a637519e6dcacffde25ba4f7cdb4eb4f9d75", 
+                "basename": "gtdbtk.bac120.summary.tsv", 
+                "size": 2352, 
+                "class": "File", 
+            }, 
+            {
+                "checksum": "sha1$da39a3ee5e6b4b0d3255bfef95601890afd80709", 
+                "basename": "gtdbtk.bac120.filtered.tsv", 
+                "size": 0, 
+                "class": "File", 
+            }, 
+            {
+                "checksum": "sha1$e812f4d6755c1013ba630d9f61f19d798a4bbc66", 
+                "basename": "gtdbtk.log", 
+                "size": 2060, 
+                "class": "File", 
+            }, 
+            {
+                "checksum": "sha1$e6061d8e1a056d86b243844a71defb9ceeefb810", 
+                "basename": "gtdbtk.bac120.classify.tree", 
+                "size": 1039516, 
+                "class": "File", 
+            }, 
+            {
+                "basename": "align", 
+                "class": "Directory", 
+                "listing": [
+                    {
+                        "checksum": "sha1$32746c04d909d29dad10508526d93da8b12d200b", 
+                        "basename": "gtdbtk.bac120.msa.fasta", 
+                        "size": 121678792, 
+                        "class": "File", 
+                    }, 
+                    {
+                        "basename": "intermediate_results", 
+                        "class": "Directory", 
+                        "listing": [
+                            {
+                                "checksum": "sha1$f29d9e2f7889950d57cd51c5934f78334b4dd6ca", 
+                                "basename": "gtdbtk.bac120.marker_info.tsv", 
+                                "size": 7574, 
+                                "class": "File", 
+                            }, 
+                            {
+                                "checksum": "sha1$09dadacddb7f34f0ce987a51572c0c29345235ae", 
+                                "basename": "gtdbtk.ar122.marker_info.tsv", 
+                                "size": 7672, 
+                                "class": "File", 
+                            }
+                        ]
+                    }, 
+                    {
+                        "checksum": "sha1$da39a3ee5e6b4b0d3255bfef95601890afd80709", 
+                        "basename": "gtdbtk.bac120.filtered.tsv", 
+                        "size": 0, 
+                        "class": "File", 
+                    }, 
+                    {
+                        "checksum": "sha1$8836b590aa6f77a558217491a2095d7045653477", 
+                        "basename": "gtdbtk.bac120.user_msa.fasta", 
+                        "size": 10118, 
+                        "class": "File", 
+                    }
+                ]
+            }, 
+            {
+                "checksum": "sha1$e86660ad07dd26620383d31f890dfab6726c1e63", 
+                "basename": "gtdbtk.translation_table_summary.tsv", 
+                "size": 40, 
+                "class": "File", 
+            }, 
+            {
+                "checksum": "sha1$8836b590aa6f77a558217491a2095d7045653477", 
+                "basename": "gtdbtk.bac120.user_msa.fasta", 
+                "size": 10118, 
+                "class": "File", 
+            }, 
+            {
+                "basename": "identify", 
+                "class": "Directory", 
+                "listing": [
+                    {
+                        "basename": "intermediate_results", 
+                        "class": "Directory", 
+                        "listing": [
+                            {
+                                "basename": "marker_genes", 
+                                "class": "Directory", 
+                                "listing": [
+                                    {
+                                        "basename": "GUT_GENOME000132", 
+                                        "class": "Directory", 
+                                        "listing": [
+                                            {
+                                                "checksum": "sha1$bb0e315c34bfc9eee9506b661295f4b88555a088", 
+                                                "basename": "GUT_GENOME000132_pfam_tophit.tsv", 
+                                                "size": 930, 
+                                                "class": "File", 
+                                            }, 
+                                            {
+                                                "checksum": "sha1$d360bd62fd80c4e9671a3e9fb1def70aa6d24a82", 
+                                                "basename": "prodigal_translation_table.tsv.sha256", 
+                                                "size": 40, 
+                                                "class": "File", 
+                                            }, 
+                                            {
+                                                "checksum": "sha1$b88cffb0a0a004c5126908df9428ee5bd7ae132f", 
+                                                "basename": "GUT_GENOME000132_tigrfam.tsv.sha256", 
+                                                "size": 40, 
+                                                "class": "File", 
+                                            }, 
+                                            {
+                                                "checksum": "sha1$18b80f2218183a98cfa67a9807898407d58fd566", 
+                                                "basename": "GUT_GENOME000132_pfam.tsv", 
+                                                "size": 5848, 
+                                                "class": "File", 
+                                            }, 
+                                            {
+                                                "checksum": "sha1$16f607af343095436224e13f3431f49414cc56f8", 
+                                                "basename": "GUT_GENOME000132_protein.gff", 
+                                                "size": 778470, 
+                                                "class": "File", 
+                                            }, 
+                                            {
+                                                "checksum": "sha1$586b56dc7590d143ff5ebb07c5909ceca0f9bab2", 
+                                                "basename": "GUT_GENOME000132_tigrfam.out", 
+                                                "size": 330793, 
+                                                "class": "File", 
+                                            }, 
+                                            {
+                                                "checksum": "sha1$ac3e6f8c6b0bd320e24bd2a4ac20ed415a0e9565", 
+                                                "basename": "GUT_GENOME000132_protein.fna.sha256", 
+                                                "size": 40, 
+                                                "class": "File", 
+                                            }, 
+                                            {
+                                                "checksum": "sha1$ff4902d3cbc432fa06b08fa85027a642f0e9afd0", 
+                                                "basename": "GUT_GENOME000132_pfam_tophit.tsv.sha256", 
+                                                "size": 40, 
+                                                "class": "File", 
+                                            }, 
+                                            {
+                                                "checksum": "sha1$9d488ac756803938b4ee2dee48449905822bbc69", 
+                                                "basename": "GUT_GENOME000132_protein.faa.sha256", 
+                                                "size": 40, 
+                                                "class": "File", 
+                                            }, 
+                                            {
+                                                "checksum": "sha1$ac31ed12e679c542edd2408b46d4f995f29d35f6", 
+                                                "basename": "GUT_GENOME000132_tigrfam_tophit.tsv.sha256", 
+                                                "size": 40, 
+                                                "class": "File", 
+                                            }, 
+                                            {
+                                                "checksum": "sha1$a681b2978f4264248920228f88f593c804d45d41", 
+                                                "basename": "GUT_GENOME000132_protein.faa", 
+                                                "size": 1512507, 
+                                                "class": "File", 
+                                            }, 
+                                            {
+                                                "checksum": "sha1$45116a3353eaee49bb868676ced970e910eec284", 
+                                                "basename": "GUT_GENOME000132_protein.gff.sha256", 
+                                                "size": 40, 
+                                                "class": "File", 
+                                            }, 
+                                            {
+                                                "checksum": "sha1$e10b4e6a4ce2162e42365ab1630a8618cadab8bb", 
+                                                "basename": "GUT_GENOME000132_pfam.tsv.sha256", 
+                                                "size": 40, 
+                                                "class": "File", 
+                                            }, 
+                                            {
+                                                "checksum": "sha1$e57007424eee58cb5653defad59dbbd1834f3968", 
+                                                "basename": "GUT_GENOME000132_tigrfam_tophit.tsv", 
+                                                "size": 6265, 
+                                                "class": "File", 
+                                            }, 
+                                            {
+                                                "checksum": "sha1$7ec6d8bcdb21ed29a4473117dfbe6e9cca7bc9ad", 
+                                                "basename": "GUT_GENOME000132_tigrfam.tsv", 
+                                                "size": 35582, 
+                                                "class": "File", 
+                                            }, 
+                                            {
+                                                "checksum": "sha1$33fc2ccbaa6a53d82413fe2a55eb7c953e096dc0", 
+                                                "basename": "GUT_GENOME000132_tigrfam.out.sha256", 
+                                                "size": 40, 
+                                                "class": "File", 
+                                            }, 
+                                            {
+                                                "checksum": "sha1$f2a8e76a97f09c98f3540696aeebadb6c4db0ba5", 
+                                                "basename": "GUT_GENOME000132_protein.fna", 
+                                                "size": 3660713, 
+                                                "class": "File", 
+                                            }, 
+                                            {
+                                                "checksum": "sha1$140d19f2cc3a6f33c1fb75a16729ace920febbc4", 
+                                                "basename": "prodigal_translation_table.tsv", 
+                                                "size": 73, 
+                                                "class": "File", 
+                                            }
+                                        ]
+                                    }, 
+                                    {
+                                        "basename": "GUT_GENOME000070", 
+                                        "class": "Directory", 
+                                        "listing": [
+                                            {
+                                                "checksum": "sha1$0d9e26480a6d23d6f5bcbe98bee0c2bf48fac1ed", 
+                                                "basename": "GUT_GENOME000070_tigrfam.tsv", 
+                                                "size": 33768, 
+                                                "class": "File", 
+                                            }, 
+                                            {
+                                                "checksum": "sha1$756494846bea667b6bdb3886d96aee1191acd7e0", 
+                                                "basename": "GUT_GENOME000070_protein.gff.sha256", 
+                                                "size": 40, 
+                                                "class": "File", 
+                                            }, 
+                                            {
+                                                "checksum": "sha1$cdbbeaceed5794be9b7014be744898e421262cd1", 
+                                                "basename": "GUT_GENOME000070_tigrfam.out", 
+                                                "size": 326481, 
+                                                "class": "File", 
+                                            }, 
+                                            {
+                                                "checksum": "sha1$0b60d3fe1ba10d07e6f7de3cdf555dc660c4b89b", 
+                                                "basename": "GUT_GENOME000070_protein.faa.sha256", 
+                                                "size": 40, 
+                                                "class": "File", 
+                                            }, 
+                                            {
+                                                "checksum": "sha1$1ca0fb76596cdce2cebe14f80961f50b53860090", 
+                                                "basename": "GUT_GENOME000070_protein.gff", 
+                                                "size": 1030588, 
+                                                "class": "File", 
+                                            }, 
+                                            {
+                                                "checksum": "sha1$cd503a12eccb37830e9a6696a5132a3f20810954", 
+                                                "basename": "prodigal_translation_table.tsv.sha256", 
+                                                "size": 40, 
+                                                "class": "File", 
+                                            }, 
+                                            {
+                                                "checksum": "sha1$26ad961a8bf91945f4c49599d3c34b745604243b", 
+                                                "basename": "GUT_GENOME000070_tigrfam.tsv.sha256", 
+                                                "size": 40, 
+                                                "class": "File", 
+                                            }, 
+                                            {
+                                                "checksum": "sha1$b1cc9cf5c195bc5569f3f194dbda69f59aee63f4", 
+                                                "basename": "GUT_GENOME000070_pfam.tsv.sha256", 
+                                                "size": 40, 
+                                                "class": "File", 
+                                            }, 
+                                            {
+                                                "checksum": "sha1$0a016c4afaab630655da66707c49e4282d46de24", 
+                                                "basename": "GUT_GENOME000070_tigrfam.out.sha256", 
+                                                "size": 40, 
+                                                "class": "File", 
+                                            }, 
+                                            {
+                                                "checksum": "sha1$1c29320e24af0c1ca39392de28daa1ccf33c0860", 
+                                                "basename": "GUT_GENOME000070_pfam.tsv", 
+                                                "size": 4868, 
+                                                "class": "File", 
+                                            }, 
+                                            {
+                                                "checksum": "sha1$2ecd0adf79603489171e59b8ba1e38a0199a038e", 
+                                                "basename": "GUT_GENOME000070_tigrfam_tophit.tsv", 
+                                                "size": 6071, 
+                                                "class": "File", 
+                                            }, 
+                                            {
+                                                "checksum": "sha1$b92c747f7ac6c3e27a54e318a5454c26149bb2aa", 
+                                                "basename": "GUT_GENOME000070_protein.fna", 
+                                                "size": 5268475, 
+                                                "class": "File", 
+                                            }, 
+                                            {
+                                                "checksum": "sha1$6338150ade59d90ac54a1efe513a535f41816306", 
+                                                "basename": "GUT_GENOME000070_tigrfam_tophit.tsv.sha256", 
+                                                "size": 40, 
+                                                "class": "File", 
+                                            }, 
+                                            {
+                                                "checksum": "sha1$d69d458ca808127d9481f26824d8f66a43c7a8ff", 
+                                                "basename": "GUT_GENOME000070_pfam_tophit.tsv.sha256", 
+                                                "size": 40, 
+                                                "class": "File", 
+                                            }, 
+                                            {
+                                                "checksum": "sha1$b03dcc72b657966fed44cae7801a8780cbc9aefc", 
+                                                "basename": "GUT_GENOME000070_protein.fna.sha256", 
+                                                "size": 40, 
+                                                "class": "File", 
+                                            }, 
+                                            {
+                                                "checksum": "sha1$cd18f01c2e7a473a88945fe6b49808799d7a0134", 
+                                                "basename": "GUT_GENOME000070_protein.faa", 
+                                                "size": 2137483, 
+                                                "class": "File", 
+                                            }, 
+                                            {
+                                                "checksum": "sha1$403bcc0f81700adf4a162c914469b0d7d0f35600", 
+                                                "basename": "prodigal_translation_table.tsv", 
+                                                "size": 73, 
+                                                "class": "File", 
+                                            }, 
+                                            {
+                                                "checksum": "sha1$e1de3af4010601fc5530a9009cdb9ec3c6f44b4b", 
+                                                "basename": "GUT_GENOME000070_pfam_tophit.tsv", 
+                                                "size": 653, 
+                                                "class": "File", 
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }, 
+                    {
+                        "checksum": "sha1$e86660ad07dd26620383d31f890dfab6726c1e63", 
+                        "basename": "gtdbtk.translation_table_summary.tsv", 
+                        "size": 40, 
+                        "class": "File", 
+                    }, 
+                    {
+                        "checksum": "sha1$90ec6dab092ffdfcbcd81f7e3d336d663daf4d2b", 
+                        "basename": "gtdbtk.bac120.markers_summary.tsv", 
+                        "size": 2586, 
+                        "class": "File", 
+                    }, 
+                    {
+                        "checksum": "sha1$f54dd960d12206c4d93f65df3ecdc63fe49bcaa4", 
+                        "basename": "gtdbtk.ar122.markers_summary.tsv", 
+                        "size": 2673, 
+                        "class": "File", 
+                    }
+                ]
+            }, 
+            {
+                "basename": "classify", 
+                "class": "Directory", 
+                "listing": [
+                    {
+                        "checksum": "sha1$47c2a637519e6dcacffde25ba4f7cdb4eb4f9d75", 
+                        "basename": "gtdbtk.bac120.summary.tsv", 
+                        "size": 2352, 
+                        "class": "File", 
+                    }, 
+                    {
+                        "basename": "intermediate_results", 
+                        "class": "Directory", 
+                        "listing": [
+                            {
+                                "checksum": "sha1$b5344f7f54ff75f3e1ecf1d0a0be8994069ff644", 
+                                "basename": "gtdbtk.bac120.red_dictionary.tsv", 
+                                "size": 105, 
+                                "class": "File", 
+                            }, 
+                            {
+                                "basename": "pplacer", 
+                                "class": "Directory", 
+                                "listing": [
+                                    {
+                                        "checksum": "sha1$26859c12bca0c5dd991b7a23419bff4623d8323d", 
+                                        "basename": "pplacer.bac120.json", 
+                                        "size": 1357426, 
+                                        "class": "File", 
+                                    }, 
+                                    {
+                                        "checksum": "sha1$5a96a47924d8338e78b30808628f647cb0c0f18f", 
+                                        "basename": "pplacer.bac120.out", 
+                                        "size": 548, 
+                                        "class": "File", 
+                                    }
+                                ]
+                            }, 
+                            {
+                                "checksum": "sha1$9fe4a757f218fe4e547480e6b66d770155bade09", 
+                                "basename": "gtdbtk.bac120.classification_pplacer.tsv", 
+                                "size": 222, 
+                                "class": "File", 
+                            }
+                        ]
+                    }, 
+                    {
+                        "checksum": "sha1$e6061d8e1a056d86b243844a71defb9ceeefb810", 
+                        "basename": "gtdbtk.bac120.classify.tree", 
+                        "size": 1039516, 
+                        "class": "File", 
+                    }
+                ]
+            }, 
+            {
+                "checksum": "sha1$90ec6dab092ffdfcbcd81f7e3d336d663daf4d2b", 
+                "basename": "gtdbtk.bac120.markers_summary.tsv", 
+                "size": 2586, 
+                "class": "File", 
+            }, 
+            {
+                "checksum": "sha1$f54dd960d12206c4d93f65df3ecdc63fe49bcaa4", 
+                "basename": "gtdbtk.ar122.markers_summary.tsv", 
+                "size": 2673, 
+                "class": "File", 
+            }, 
+            {
+                "checksum": "sha1$da39a3ee5e6b4b0d3255bfef95601890afd80709", 
+                "basename": "gtdbtk.warnings.log", 
+                "size": 0, 
+                "class": "File", 
+            }
+        ], 
+        "class": "Directory"
+    }
+}
