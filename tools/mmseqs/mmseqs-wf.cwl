@@ -33,7 +33,9 @@ steps:
     run: ../../utils/return_directory.cwl
     in:
       list: mmseq/outdir
-      dir_name: {default: 'mmseq_output/mmseqs_'${inputs.limit_i}'_dir'}
+      dir_name:
+        source: ${inputs.limit_i}
+         valueFrom: mmseq_output/mmseqs_${self}_dir
     out: [out]
 
 
