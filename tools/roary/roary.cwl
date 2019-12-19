@@ -45,3 +45,7 @@ outputs:
     type: File
     outputBinding:
       glob: $(inputs.roary_outfolder)/pan_genome_reference.fa
+  roary_dir:
+    type: Directory
+    outputBinding:
+      glob: $(inputs.roary_outfolder)

@@ -28,7 +28,7 @@ outputs:
     outputSource: process_one_genome/cluster_folder
   mmseqs:
     type: Directory
-    outputSource: mmseqs/outdir
+    outputSource: return_mmseq_dir/pool_directory
 
 steps:
 
@@ -88,8 +88,16 @@ steps:
 
   mmseqs:
     run: ../tools/mmseqs/mmseqs.cwl
+    scatter: limit_i
     in:
       input_fasta: concatenate/result
       limit_i: mmseqs_limit_i
       limit_c: mmseqs_limit_c
     out: [ outdir ]
+
+  return_mmseq_dir:
+    run: ../utils/return_dir_of_dir.cwl
+    in:
+      directory_array: mmseqs/outdir
+      newname: { default: "mmseqs_output" }
+    out: [ pool_directory ]

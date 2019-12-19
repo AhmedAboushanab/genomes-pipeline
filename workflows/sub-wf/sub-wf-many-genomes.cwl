@@ -34,14 +34,14 @@ steps:
     in:
       fa_file: preparation/files
       outdirname: { default: 'prokka'}
-    out: [ gff, faa ]
+    out: [ gff, faa, outdir ]
 
   roary:
     run: ../../tools/roary/roary.cwl
     in:
       gffs: prokka/gff
       roary_outfolder: {default: 'roary_outfolder' }
-    out: [ pan_genome_reference-fa ]
+    out: [ pan_genome_reference-fa, roary_dir ]
 
   translate:
     run: ../../utils/translate_genes.cwl
@@ -71,7 +71,6 @@ steps:
     run: ../../utils/return_directory.cwl
     in:
       list:
-        - roary/pan_genome_reference-fa
         - translate/converted_faa
         - IPS/annotations
         - eggnog/annotations

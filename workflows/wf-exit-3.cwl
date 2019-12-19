@@ -21,7 +21,7 @@ outputs:
 
   mmseqs:
     type: Directory
-    outputSource: return_mmseq_dir/out
+    outputSource: return_mmseq_dir/pool_directory
 
 steps:
 
@@ -56,6 +56,6 @@ steps:
   return_mmseq_dir:
     run: ../utils/return_dir_of_dir.cwl
     in:
-      list: mmseqs/outdir
-      dir_name: { default: "mmseqs_output" }
-    out: [ out ]
+      directory_array: mmseqs/outdir
+      newname: { default: "mmseqs_output" }
+    out: [ pool_directory ]

@@ -38,7 +38,7 @@ steps:
       outdirname:
         source: cluster
         valueFrom: $(self.basename)_prokka
-    out: [ faa ]
+    out: [ faa, outdir ]
 
   IPS:
     run: ../../tools/IPS/InterProScan.cwl
