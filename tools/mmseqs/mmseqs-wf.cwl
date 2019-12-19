@@ -11,18 +11,19 @@ requirements:
 
 inputs:
   input_fasta: File
-  limit_i: float
+  limit_i: float[]
   limit_c: float
 
 outputs:
   dir:
     type: Directory
-    outputSource: return_folder/out
+    outputSource: return_folder/pool_directory
 
 
 steps:
   mmseq:
     run: mmseqs.cwl
+    scatter: limit_i
     in:
       input_fasta: input_fasta
       limit_i: limit_i
@@ -30,12 +31,10 @@ steps:
     out: [ outdir ]
 
   return_folder:
-    run: ../../utils/return_directory.cwl
+    run: ../../utils/return_dir_of_dir.cwl
     in:
-      list: mmseq/outdir
-      dir_name:
-        source: ${inputs.limit_i}
-         valueFrom: mmseq_output/mmseqs_${self}_dir
-    out: [out]
+      directory_array: mmseq/outdir
+      newname: {default: 'mmseqs_output'}
+    out: [pool_directory]
 
 

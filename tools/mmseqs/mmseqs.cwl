@@ -34,6 +34,6 @@ inputs:
 
 outputs:
   outdir:
-    type: File[]
+    type: Directory
     outputBinding:
-      glob: mmseqs_$(inputs.limit_i)_outdir/*
+      glob: mmseqs_$(inputs.limit_i)_outdir
