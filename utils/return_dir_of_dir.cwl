@@ -21,7 +21,7 @@ expression: |
       "pool_directory": {
         "class": "Directory",
         "basename": inputs.newname,
-        "listing": inputs.directory_array.listing
+        "listing": inputs.directory_array
       }
     };
   }
