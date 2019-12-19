@@ -13,7 +13,7 @@ inputs:
   many_genomes: Directory[]
   mash_folder: File[]
   mmseqs_limit_c: float
-  mmseqs_limit_i: float
+  mmseqs_limit_i: float[]
 
 outputs:
   mash_trees:

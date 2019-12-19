@@ -1,5 +1,5 @@
 input_fasta:
   class: File
-  path:
-limit_i: 100
-limit_c: 80
+  path: /hps/nobackup2/production/metagenomics/pipeline/testing/kate_work/global-temp-dir_genomes-pipeline-exit2/tmpLVF4g9/d/7/out_tmpdirGeaZ4x/prokka_many.fa
+limit_i: 1.0
+limit_c: 0.8

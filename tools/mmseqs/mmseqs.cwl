@@ -14,7 +14,7 @@ baseCommand: [ mmseqs_wf.sh ]
 arguments:
   - valueFrom: '32'
     prefix: -t
-  - valueFrom: mmseqs_$(inputs.limit_i)_outdir
+  - valueFrom: mmseqs_output/mmseqs_$(inputs.limit_i)_outdir
     prefix: -o
 
 inputs:
@@ -36,4 +36,4 @@ outputs:
   outdir:
     type: Directory
     outputBinding:
-      glob: mmseqs_$(inputs.limit_i)_outdir
+      glob: mmseqs_output

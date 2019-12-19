@@ -12,7 +12,7 @@ requirements:
 inputs:
   one_genome: Directory[]
   mmseqs_limit_c: float
-  mmseqs_limit_i: float
+  mmseqs_limit_i: float[]
 
 outputs:
   one_genome_result:
@@ -21,7 +21,7 @@ outputs:
 
   mmseqs:
     type: Directory
-    outputSource: mmseqs/outdir
+    outputSource: return_mmseq_dir/out
 
 steps:
 
@@ -46,8 +46,16 @@ steps:
 
   mmseqs:
     run: ../tools/mmseqs/mmseqs.cwl
+    scatter: limit_i
     in:
       input_fasta: concatenate/result
       limit_i: mmseqs_limit_i
       limit_c: mmseqs_limit_c
     out: [ outdir ]
+
+  return_mmseq_dir:
+    run: ../utils/return_dir_of_dir.cwl
+    in:
+      list: mmseqs/outdir
+      dir_name: { default: "mmseqs_output" }
+    out: [ out ]

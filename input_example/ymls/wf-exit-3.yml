@@ -1,4 +1,12 @@
 one_genome:
-
-mmseqs_limit_i: 1
+  - class: Directory
+    path:
+  - class: Directory
+    path:
+# ...
+mmseqs_limit_i:
+  - 1.0
+  - 0.95
+  - 0.90
+  - 0.50
 mmseqs_limit_c: 0.8
