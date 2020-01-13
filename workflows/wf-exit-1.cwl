@@ -20,12 +20,27 @@ outputs:
   mash_folder:
     type: Directory
     outputSource: return_mash_dir/out
+
   many_genomes:
     type: Directory[]
     outputSource: process_many_genomes/cluster_folder
+  many_genomes_roary:
+    type: Directory[]
+    outputSource: process_many_genomes/roary_folder
+  many_genomes_prokka:
+    type: Directory[]
+    outputSource: process_many_genomes/prokka_folder
+  many_genomes_genomes:
+    type: Directory[]
+    outputSource: process_many_genomes/genomes_folder
+
   one_genome:
     type: Directory[]
     outputSource: process_one_genome/cluster_folder
+  one_genome_prokka:
+    type: Directory[]
+    outputSource: process_one_genome/cluster_folder_prokka
+
   mmseqs:
     type: Directory
     outputSource: return_mmseq_dir/pool_directory
@@ -41,6 +56,9 @@ steps:
     out:
       - prokka_faa-s
       - cluster_folder
+      - roary_folder
+      - prokka_folder
+      - genomes_folder
 
 # ----------- << one genome cluster processing >> -----------
   process_one_genome:
@@ -51,6 +69,7 @@ steps:
     out:
       - prokka_faa-s
       - cluster_folder
+      - cluster_folder_prokka
 
 # ----------- << mash trees >> -----------
   process_mash:

@@ -21,6 +21,9 @@ outputs:
   cluster_folder:
     type: Directory
     outputSource: create_cluster_folder/out
+  cluster_folder_prokka:
+    type: Directory
+    outputSource: prokka/outdir
 
 steps:
   preparation:
@@ -37,7 +40,7 @@ steps:
         valueFrom: $(self[0])
       outdirname:
         source: cluster
-        valueFrom: $(self.basename)_prokka
+        valueFrom: cluster_$(self.basename)/prokka_outfolder
     out: [ faa, outdir ]
 
   IPS:

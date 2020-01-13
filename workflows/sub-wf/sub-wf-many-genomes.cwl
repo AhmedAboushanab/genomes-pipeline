@@ -20,6 +20,15 @@ outputs:
   cluster_folder:
     type: Directory
     outputSource: create_cluster_folder/out
+  roary_folder:
+    type: Directory
+    outputSource: roary/roary_dir
+  prokka_folder:
+    type: Directory
+    outputSource: prokka/outdir
+  genomes_folder:
+    type: Directory
+    outputSource: create_cluster_genomes/out
 
 steps:
   preparation:
@@ -82,4 +91,13 @@ steps:
       dir_name:
         source: cluster
         valueFrom: cluster_$(self.basename)
+    out: [ out ]
+
+  create_cluster_genomes:
+    run: ../../utils/return_directory.cwl
+    in:
+      list: preparation/files
+      dir_name:
+        source: cluster
+        valueFrom: cluster_$(self.basename)/genomes
     out: [ out ]

@@ -18,6 +18,9 @@ outputs:
   one_genome_result:
     type: Directory[]
     outputSource: process_one_genome/cluster_folder
+  one_genome_result_prokka:
+    type: Directory[]
+    outputSource: process_one_genome/cluster_folder_prokka
 
   mmseqs:
     type: Directory
@@ -34,6 +37,7 @@ steps:
     out:
       - prokka_faa-s
       - cluster_folder
+      - cluster_folder_prokka
 
 # ----------- << prep mmseqs >> -----------
 
