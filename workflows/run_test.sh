@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source /hps/nobackup2/production/metagenomics/pipeline/testing/kate/toil-3.19.0/bin/activate
+source /hps/nobackup/production/metagenomics/software/toil-venv/bin/activate
 source /nfs/production/interpro/metagenomics/mags-scripts/annot-config
 export PATH=$PATH:/homes/emgpr/.nvm/versions/node/v12.10.0/bin/
 
