@@ -1,0 +1,18 @@
+many_genomes:
+  - class: Directory
+    path: /hps/nobackup2/production/metagenomics/pipeline/testing/kate_work/global-temp-dir_genomes-pipeline-exit2/tmpcOpPtK/8/a/out_tmpdirDBYbl0/many_genomes/1_1
+  - class: Directory
+    path: /hps/nobackup2/production/metagenomics/pipeline/testing/kate_work/global-temp-dir_genomes-pipeline-exit2/tmpcOpPtK/8/a/out_tmpdirDBYbl0/many_genomes/2_1
+# ...
+mash_folder:
+  - class: File
+    path: /hps/nobackup2/production/metagenomics/pipeline/testing/kate_work/global-temp-dir_genomes-pipeline-exit2/tmpcOpPtK/8/a/out_tmpdirDBYbl0/mash_folder/1_1_mash.tsv
+  - class: File
+    path: /hps/nobackup2/production/metagenomics/pipeline/testing/kate_work/global-temp-dir_genomes-pipeline-exit2/tmpcOpPtK/8/a/out_tmpdirDBYbl0/mash_folder/2_1_mash.tsv
+# ...
+mmseqs_limit_i:
+  - 1.0
+  - 0.95
+  - 0.90
+  - 0.50
+mmseqs_limit_c: 0.8

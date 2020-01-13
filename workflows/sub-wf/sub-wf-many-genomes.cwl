@@ -33,14 +33,18 @@ steps:
     scatter: fa_file
     in:
       fa_file: preparation/files
-      outdirname: { default: 'prokka'}
+      outdirname:
+        source: cluster
+        valueFrom: cluster_$(self.basename)/prokka_outfolder
     out: [ gff, faa, outdir ]
 
   roary:
     run: ../../tools/roary/roary.cwl
     in:
       gffs: prokka/gff
-      roary_outfolder: {default: 'roary_outfolder' }
+      roary_outfolder:
+        source: cluster
+        valueFrom: cluster_$(self.basename)/roary_outfolder
     out: [ pan_genome_reference-fa, roary_dir ]
 
   translate:
