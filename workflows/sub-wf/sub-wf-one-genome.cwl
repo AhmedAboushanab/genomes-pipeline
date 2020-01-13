@@ -24,6 +24,9 @@ outputs:
   cluster_folder_prokka:
     type: Directory
     outputSource: prokka/outdir
+  cluster_folder_genome:
+    type: Directory
+    outputSource: create_cluster_genomes/out
 
 steps:
   preparation:
@@ -68,4 +71,13 @@ steps:
       dir_name:
         source: cluster
         valueFrom: cluster_$(self.basename)
+    out: [ out ]
+
+  create_cluster_genomes:
+    run: ../../utils/return_directory.cwl
+    in:
+      list: preparation/files
+      dir_name:
+        source: cluster
+        valueFrom: cluster_$(self.basename)/genome
     out: [ out ]

@@ -40,6 +40,9 @@ outputs:
   one_genome_prokka:
     type: Directory[]
     outputSource: process_one_genome/cluster_folder_prokka
+  one_genome_genomes:
+    type: Directory[]
+    outputSource: process_one_genome/cluster_folder_genome
 
   mmseqs:
     type: Directory
@@ -70,6 +73,7 @@ steps:
       - prokka_faa-s
       - cluster_folder
       - cluster_folder_prokka
+      - cluster_folder_genome
 
 # ----------- << mash trees >> -----------
   process_mash:
