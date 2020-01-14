@@ -11,6 +11,7 @@ requirements:
 
 inputs:
   cluster: Directory
+  mash_files: File[]
 
 outputs:
   prokka_faa-s:
@@ -79,6 +80,16 @@ steps:
         source: cluster
         valueFrom: $(self.basename)
     out: [annotations, seed_orthologs]
+# --------------------------------------- result folder -----------------------------------------
+
+  get_mash_file:
+    run: ../../utils/get_file_pattern.cwl
+    in:
+      list_files: File[]
+      pattern:
+        source: cluster
+        valueFrom: cluster_$(self.basename)
+    out: [ file ]
 
   create_cluster_folder:
     run: ../../utils/return_directory.cwl
@@ -88,6 +99,7 @@ steps:
         - IPS/annotations
         - eggnog/annotations
         - eggnog/seed_orthologs
+        - get_mash_file/file
       dir_name:
         source: cluster
         valueFrom: cluster_$(self.basename)

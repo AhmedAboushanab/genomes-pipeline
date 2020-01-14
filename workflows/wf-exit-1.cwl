@@ -56,6 +56,7 @@ steps:
     scatter: cluster
     in:
       cluster: many_genomes
+      mash_files: mash_folder
     out:
       - prokka_faa-s
       - cluster_folder
