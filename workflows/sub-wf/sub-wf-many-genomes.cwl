@@ -23,10 +23,10 @@ outputs:
     outputSource: create_cluster_folder/out
   roary_folder:
     type: Directory
-    outputSource: roary/roary_dir
+    outputSource: return_roary_cluster_dir/pool_directory
   prokka_folder:
     type: Directory
-    outputSource: prokka/outdir
+    outputSource: return_prokka_cluster_dir/pool_directory
   genomes_folder:
     type: Directory
     outputSource: create_cluster_genomes/out
@@ -43,18 +43,14 @@ steps:
     scatter: fa_file
     in:
       fa_file: preparation/files
-      outdirname:
-        source: cluster
-        valueFrom: cluster_$(self.basename)/prokka_outfolder
+      outdirname: {default: prokka_output }
     out: [ gff, faa, outdir ]
 
   roary:
     run: ../../tools/roary/roary.cwl
     in:
       gffs: prokka/gff
-      roary_outfolder:
-        source: cluster
-        valueFrom: cluster_$(self.basename)/roary_outfolder
+      roary_outfolder: {default: roary_output }
     out: [ pan_genome_reference-fa, roary_dir ]
 
   translate:
@@ -85,7 +81,7 @@ steps:
   get_mash_file:
     run: ../../utils/get_file_pattern.cwl
     in:
-      list_files: File[]
+      list_files: mash_files
       pattern:
         source: cluster
         valueFrom: cluster_$(self.basename)
@@ -113,3 +109,27 @@ steps:
         source: cluster
         valueFrom: cluster_$(self.basename)/genomes
     out: [ out ]
+
+  return_prokka_cluster_dir:
+    run: ../../utils/return_dir_of_dir.cwl
+    in:
+      directory_array:
+        linkMerge: merge_nested
+        source:
+          - prokka/outdir
+      newname:
+        source: cluster
+        valueFrom: cluster_$(self.basename)
+    out: [ pool_directory ]
+
+  return_roary_cluster_dir:
+    run: ../../utils/return_dir_of_dir.cwl
+    in:
+      directory_array:
+        linkMerge: merge_nested
+        source:
+          - roary/roary_dir
+      newname:
+        source: cluster
+        valueFrom: cluster_$(self.basename)
+    out: [ pool_directory ]

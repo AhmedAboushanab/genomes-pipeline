@@ -23,7 +23,7 @@ outputs:
     outputSource: create_cluster_folder/out
   cluster_folder_prokka:
     type: Directory
-    outputSource: prokka/outdir
+    outputSource: return_prokka_cluster_dir/pool_directory
   cluster_folder_genome:
     type: Directory
     outputSource: create_cluster_genomes/out
@@ -41,9 +41,7 @@ steps:
       fa_file:
         source: preparation/files
         valueFrom: $(self[0])
-      outdirname:
-        source: cluster
-        valueFrom: cluster_$(self.basename)/prokka_outfolder
+      outdirname: { default: prokka_output }
     out: [ faa, outdir ]
 
   IPS:
@@ -81,3 +79,15 @@ steps:
         source: cluster
         valueFrom: cluster_$(self.basename)/genome
     out: [ out ]
+
+  return_prokka_cluster_dir:
+    run: ../../utils/return_dir_of_dir.cwl
+    in:
+      directory_array:
+        linkMerge: merge_nested
+        source:
+          - prokka/outdir
+      newname:
+        source: cluster
+        valueFrom: cluster_$(self.basename)
+    out: [ pool_directory ]
