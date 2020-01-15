@@ -27,7 +27,9 @@ outputs:
     type: Directory[]
     outputSource: process_many_genomes/roary_folder
   many_genomes_result_prokka:
-    type: Directory[]
+    type:
+      type: array
+      items: Directory[]
     outputSource: process_many_genomes/prokka_folder
   many_genomes_result_genomes:
     type: Directory[]

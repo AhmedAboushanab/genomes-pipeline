@@ -25,8 +25,8 @@ outputs:
     type: Directory
     outputSource: return_roary_cluster_dir/pool_directory
   prokka_folder:
-    type: Directory
-    outputSource: return_prokka_cluster_dir/pool_directory
+    type: Directory[]
+    outputSource: return_prokka_cluster_dir/dir_of_dir
   genomes_folder:
     type: Directory
     outputSource: create_cluster_genomes/out
@@ -118,7 +118,7 @@ steps:
       newname:
         source: cluster
         valueFrom: cluster_$(self.basename)
-    out: [ pool_directory ]
+    out: [ dir_of_dir ]
 
   return_roary_cluster_dir:
     run: ../../utils/return_dir_of_dir.cwl
