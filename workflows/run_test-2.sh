@@ -13,7 +13,7 @@ export PIPELINE_FOLDER=/hps/nobackup2/production/metagenomics/databases/human-gu
 
 export NAME_RUN=test-new-exit2
 export CWL=$PIPELINE_FOLDER/workflows/wf-exit-2.cwl
-export YML=$PIPELINE_FOLDER/workflows/test.yml
+export YML=$PIPELINE_FOLDER/workflows/test-2.yml
 
 # < set up folders >
 export JOB_TOIL_FOLDER=$WORK_DIR/$NAME_RUN/
