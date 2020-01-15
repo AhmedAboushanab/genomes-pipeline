@@ -112,6 +112,7 @@ steps:
 
   return_prokka_cluster_dir:
     run: ../../utils/return_dir_of_dir.cwl
+    scatter: directory_array
     in:
       directory_array:
         linkMerge: merge_nested
