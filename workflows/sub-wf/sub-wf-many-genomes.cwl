@@ -112,12 +112,9 @@ steps:
 
   return_prokka_cluster_dir:
     run: ../../utils/return_dir_of_dir.cwl
-    scatter: directory_array
+    scatter: directory
     in:
-      directory_array:
-        linkMerge: merge_nested
-        source:
-          - prokka/outdir
+      directory: prokka/outdir
       newname:
         source: cluster
         valueFrom: cluster_$(self.basename)

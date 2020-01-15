@@ -6,22 +6,39 @@ requirements:
   InlineJavascriptRequirement: {}
 
 inputs:
+  directory:
+    type: Directory?
   directory_array:
-    type: Directory[]
+    type: Directory[]?
   newname:
     type: string
 
 outputs:
   pool_directory:
-    type: Directory
+    type: Directory?
+  dir_of_dir:
+    type: Directory?
 
 expression: |
   ${
+    if (inputs.directory)
+      {
+      return {
+        "dir_of_dir": {
+          "class": "Directory",
+          "basename": inputs.newname,
+          "listing": [ inputs.directory ]
+       }
+      };
+    }
+    if (inputs.directory_array)
+    {
     return {
-      "pool_directory": {
-        "class": "Directory",
-        "basename": inputs.newname,
-        "listing": inputs.directory_array
-      }
-    };
+        "pool_directory": {
+          "class": "Directory",
+          "basename": inputs.newname,
+          "listing": inputs.directory_array
+       }
+      };
+    }
   }
