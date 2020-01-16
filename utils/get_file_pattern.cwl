@@ -12,7 +12,7 @@ inputs:
   pattern: string
 
 outputs:
-  file:
+  file_pattern:
     type: File
 
 expression: >
@@ -22,5 +22,5 @@ expression: >
         if (inputs.list_files[i].nameroot.split(inputs.pattern).length > 1) {
             helpArray.push(inputs.list_files[i]);
       }}
-    return { 'file' : helpArray[0] }
+    return { 'file_pattern' : helpArray[0] }
   }

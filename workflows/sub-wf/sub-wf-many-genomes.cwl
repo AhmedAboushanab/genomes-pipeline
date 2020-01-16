@@ -84,8 +84,8 @@ steps:
       list_files: mash_files
       pattern:
         source: cluster
-        valueFrom: cluster_$(self.basename)
-    out: [ file ]
+        valueFrom: $(self.basename)
+    out: [ file_pattern ]
 
   create_cluster_folder:
     run: ../../utils/return_directory.cwl
@@ -95,7 +95,7 @@ steps:
         - IPS/annotations
         - eggnog/annotations
         - eggnog/seed_orthologs
-        - get_mash_file/file
+        - get_mash_file/file_pattern
       dir_name:
         source: cluster
         valueFrom: cluster_$(self.basename)
