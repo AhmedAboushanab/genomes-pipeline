@@ -32,16 +32,15 @@ export OUT_DIR=${CUR_DIR}
 export OUT_DIR_FINAL=${OUT_DIR}/results/${NAME_RUN}
 
 echo "Create empty ${LOG_DIR} and YML-file"
-mkdir -p $LOG_DIR
-export RUN_YML=${LOG_DIR}/${NAME_RUN}.yml
-echo "genomes_folder:
-  class: Directory
-  path: ${GENOMES}" >> ${RUN_YML}
-
-export NAME_RUN_1=${NAME_RUN}_1
 export OUT_TOOL_1=${OUT_DIR_FINAL}_1
-echo "First part result would be in ${OUT_TOOL_1}"
 
+mkdir -p $LOG_DIR ${OUT_TOOL_1}
+
+cp $PIPELINE_FOLDER/workflows/yml_patterns/wf-1.yml ${OUT_TOOL_1}
+export YML_1=${OUT_TOOL_1}/wf-1.yml
+echo " ${GENOMES}" >> ${YML_1}
+
+echo "First part result would be in ${OUT_TOOL_1}"
 echo "Set TOIL_LSF_ARGS"
 export JOB_GROUP=genome_pipeline
 bgadd -L 50 /${USER}_${JOB_GROUP} > /dev/null
@@ -56,7 +55,7 @@ export CWL_ONE=$PIPELINE_FOLDER/workflows/wf-exit-3.cwl
 echo " === Running first part === "
 echo "Out json would be in ${OUT_TOOL_1}/out.json"
 
-mkdir -p $JOB_TOIL_FOLDER_1 $TMPDIR $OUT_TOOL_1 && \
+mkdir -p $JOB_TOIL_FOLDER_1 $TMPDIR && \
 cd $WORK_DIR && \
 time cwltoil \
   --no-container \
@@ -68,7 +67,7 @@ time cwltoil \
   --outdir $OUT_TOOL_1 \
   --retryCount 3 \
   --logFile $LOG_DIR/${NAME_RUN}_1.log \
-${CWL} ${RUN_YML} > ${OUT_TOOL_1}/out.json
+${CWL} ${YML_1} > ${OUT_TOOL_1}/out.json
 
 echo " === Parsing first output folder === "
 
