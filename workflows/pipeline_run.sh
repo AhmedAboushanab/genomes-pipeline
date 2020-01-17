@@ -77,7 +77,7 @@ echo " === Parsing first output folder === "
 cp $PIPELINE_FOLDER/workflows/yml_patterns/wf-2.yml ${OUT_TOOL_1}
 export YML_2=${OUT_TOOL_1}/wf-2.yml
 
-python3 $PIPELINE_FOLDER/utils/parser_yml.py -j ${OUT_TOOL_1}/out.json -y ${YML_2}
+python3 $PIPELINE_FOLDER/utils/parser_yml.py -j ${OUT_TOOL_1}/out1.json -y ${YML_2}
 export EXIT_CODE=$?
 echo ${EXIT_CODE}
 
