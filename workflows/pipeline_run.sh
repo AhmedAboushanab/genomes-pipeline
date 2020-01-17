@@ -17,6 +17,7 @@ while getopts :m:n:c:a:g: option; do
 	esac
 done
 
+# --------------------------------- 1 ---------------------------------
 echo "Activating envs"
 source /hps/nobackup2/production/metagenomics/pipeline/testing/kate/toil-3.19.0/bin/activate
 source /nfs/production/interpro/metagenomics/mags-scripts/annot-config
@@ -26,9 +27,9 @@ echo "Set folders"
 export WORK_DIR=${CUR_DIR}/work-dir
 export JOB_TOIL_FOLDER_1=${WORK_DIR}/job-store-wf-1
 export JOB_TOIL_FOLDER_2=${WORK_DIR}/job-store-wf-2
+export OUT_DIR=${CUR_DIR}
 export LOG_DIR=${OUT_DIR}/log-dir/${NAME_RUN}
 export TMPDIR=${WORK_DIR}/temp-dir/${NAME_RUN}
-export OUT_DIR=${CUR_DIR}
 export OUT_DIR_FINAL=${OUT_DIR}/results/${NAME_RUN}
 
 echo "Create empty ${LOG_DIR} and YML-file"
@@ -52,6 +53,7 @@ export CWL_BOTH=$PIPELINE_FOLDER/workflows/wf-exit-1.cwl
 export CWL_MANY=$PIPELINE_FOLDER/workflows/wf-exit-2.cwl
 export CWL_ONE=$PIPELINE_FOLDER/workflows/wf-exit-3.cwl
 
+# --------------------------------- 2 ---------------------------------
 echo " === Running first part === "
 echo "Out json would be in ${OUT_TOOL_1}/out.json"
 
@@ -67,8 +69,9 @@ time cwltoil \
   --outdir $OUT_TOOL_1 \
   --retryCount 3 \
   --logFile $LOG_DIR/${NAME_RUN}_1.log \
-${CWL} ${YML_1} > ${OUT_TOOL_1}/out.json
+${CWL} ${YML_1} > ${OUT_TOOL_1}/out1.json
 
+# --------------------------------- 3 ---------------------------------
 echo " === Parsing first output folder === "
 
 cp $PIPELINE_FOLDER/workflows/yml_patterns/wf-2.yml ${OUT_TOOL_1}
@@ -85,6 +88,8 @@ export OUT_TOOL_2=${OUT_DIR_FINAL}_2
 
 mkdir -p ${OUT_TOOL_2} ${JOB_TOIL_FOLDER_2}
 
+# --------------------------------- 4 ---------------------------------
+
 if [ ${EXIT_CODE} -eq 1 ]
 then
     echo "=== Running many and one genomes sub-wf ==="
@@ -98,7 +103,7 @@ then
         --logFile $LOG_DIR/${NAME_RUN}_2.log \
         --defaultCores $NUM_CORES \
         --writeLogs ${LOG_DIR} \
-    ${CWL_BOTH} ${YML_2} > ${OUT_TOOL_2}/out.json
+    ${CWL_BOTH} ${YML_2} > ${OUT_TOOL_2}/out2.json
 fi
 if [ ${EXIT_CODE} -eq 2 ]
 then
@@ -113,7 +118,7 @@ then
         --logFile $LOG_DIR/${NAME_RUN}_2.log \
         --defaultCores $NUM_CORES \
         --writeLogs ${LOG_DIR} \
-    ${CWL_MANY} ${YML_2} > ${OUT_TOOL_2}/out.json
+    ${CWL_MANY} ${YML_2} > ${OUT_TOOL_2}/out2.json
 fi
 if [ ${EXIT_CODE} -eq 3 ]
 then
@@ -128,12 +133,14 @@ then
         --logFile $LOG_DIR/${NAME_RUN}_2.log \
         --defaultCores $NUM_CORES \
         --writeLogs ${LOG_DIR} \
-    ${CWL_ONE} ${YML_2} > ${OUT_TOOL_2}/out.json
+    ${CWL_ONE} ${YML_2} > ${OUT_TOOL_2}/out2.json
 fi
 if [ ${EXIT_CODE} -eq 4 ]
 then
     echo "??????? Something very strange happened ????????"
 fi
+
+# --------------------------------- 5 ---------------------------------
 
 echo "Moving results"
 mkdir -p ${OUT_DIR_FINAL}
