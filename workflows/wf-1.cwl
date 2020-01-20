@@ -20,9 +20,9 @@ outputs:
   gtdbtk:
     type: Directory
     outputSource: gtdbtk/gtdbtk_folder
-  taxcheck_dirs:
-    type: Directory[]
-    outputSource: taxcheck/taxcheck_folder
+  taxcheck_dir:
+    type: Directory
+    outputSource: return_taxcheck_dir/pool_directory
 
   many_genomes:
     type: Directory[]?
@@ -51,6 +51,12 @@ steps:
       taxcheck_outname: { default: 'taxcheck'}
     out: [ taxcheck_folder ]
 
+  return_taxcheck_dir:
+    run: ../utils/return_dir_of_dir.cwl
+    in:
+      directory_array: taxcheck/taxcheck_folder
+      newname: { default: "taxcheck_output" }
+    out: [ pool_directory ]
 # ----------- << checkm >> -----------
   checkm:
     run: ../tools/checkm/checkm.cwl
