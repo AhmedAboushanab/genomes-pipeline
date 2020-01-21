@@ -146,7 +146,7 @@ echo "Moving results"
 mkdir -p ${OUT_DIR_FINAL}
 if [ -d ${OUT_TOOL_1} ]
 then
-    mv ${OUT_TOOL_1}/* ${OUT_DIR_FINAL}
+    mv ${OUT_TOOL_1}/wf-1.yml ${OUT_TOOL_1}/out1.json ${OUT_TOOL_1}/checkm_quality.csv ${OUT_TOOL_1}/taxcheck_output ${OUT_TOOL_1}/gtdb-tk_output ${OUT_DIR_FINAL}
 fi
 if [ -d ${OUT_TOOL_2} ]
 then
